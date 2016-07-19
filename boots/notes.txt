@@ -1,5 +1,12 @@
 <container> 
 <container-fluid> 
+class="col-md-6 col-sm-6 col-xs-6"
+class= "col-md-offset-6"
+class= "col-sm-offset-0"(offests are inherited. Use 0 to set the iheritence off)
+class= "hidden-sm hidden-xs"(this hides)
+class= "visible-sm visible-xs"(this reveals itself)
+
+
 
 container-fluid and container
 http://stackoverflow.com/questions/29660034/nesting-a-container-class-inside-a-container-fluid-class-in-bootstrap-3
@@ -7,3 +14,7 @@ http://stackoverflow.com/questions/29660034/nesting-a-container-class-inside-a-c
 
 col md ???
 http://stackoverflow.com/questions/19865158/what-is-the-difference-among-col-lg-col-md-and-col-sm-in-twitter-bootstra
+
+
+adding some extra space?
+http://stackoverflow.com/questions/10085723/twitter-bootstrap-add-top-space-between-rows
