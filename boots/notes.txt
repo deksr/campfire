@@ -5,6 +5,8 @@ class= "col-md-offset-6"
 class= "col-sm-offset-0"(offests are inherited. Use 0 to set the iheritence off)
 class= "hidden-sm hidden-xs"(this hides)
 class= "visible-sm visible-xs"(this reveals itself)
+class= "lead", class= "text-center"
+<i class="glyphicon"> </i>
 
 
 
