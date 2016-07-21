@@ -8,6 +8,10 @@ class= "visible-sm visible-xs"(this reveals itself)
 class= "lead", class= "text-center"
 <i class="glyphicon"> </i>
 class="list-unstyled"
+class="well"
+class="bt"
+navbar-nav, nav-pills, navbar-right
+
 
 
 
