@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	.ok{
+position: relative;
+top:300px;
+margin-left: 100px;
+background-color: red;
+height: 50px;
+width: 50px;
+	}
+
+	.swingimage{
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-animation: swinging 3.5s ease-in-out forwards infinite;
+    animation: swinging 1.5s ease-in-out forwards infinite;
+}
+
+@-webkit-keyframes swinging{
+    0%{-webkit-transform: rotate(10deg);}
+    50%{-webkit-transform: rotate(50deg)}
+    100%{-webkit-transform: rotate(10deg);}
+}
+ 
+	</style>
+</head>
+<body>
+	<div class="ok swingimage"> bla </div>
+
+	
+</body>
+</html>
