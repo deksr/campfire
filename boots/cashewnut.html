@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	 <style>
+  .cashew{
+  	background-color: red;
+	}
+	.columns{
+		background-color: green;
+		margin:10px;
+		width: 150px;
+		text-align: center;
+		position: relative;
+		left: 150px;
+		height: 200px;
+
+	}
+	.middle{
+		background-color: black;
+		width: 100px;
+		height: 100px;
+		color: white;
+		margin: 0 auto;
+		margin-top: 20px;
+		border-radius: 50%;
+
+		 /* display: inline-block;*//*this works */
+	}
+
+	.innermost{
+		background-color: yellow;
+		margin: 0 auto;
+    position: absolute;
+    top: 40px;
+    border-radius: 50%;
+    color:black;
+    left: 60px;
+	}
+	 </style>
+</head>
+<body>
+
+	<div class="cashew">
+		<div class="container-fluid"> 
+			<div class="row"> 
+				<div class="this columns col-sm-4"><div class="middle"><div class="innermost">  this </div></div></div>
+				<div class="that columns col-sm-4"> door 2 </div>
+				<div class="everything columns col-sm-4"> door 3 </div>
+			</div>	
+		</div>
+	</div>
+	
+	
+</body>
+</html>
