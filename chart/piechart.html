@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+
+<canvas id="myChart" height="40"></canvas>
+<canvas id="myChart2" height="40"></canvas>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"> 
+</script>
+
+<script>
+
+var data = {
+  labels: ["Red","Blue"],
+  datasets: [
+    {
+      data: [300, 50],
+      backgroundColor: ["#FF6384","#36A2EB"],
+    }]
+};
+
+  var moreConfigs = {
+    cutoutPercentage: 88,
+      animation: {
+        animationRotate: true,
+        duration: 2000
+      },
+      legend: {
+        display: true
+      },
+      tooltips: {
+        enabled: true,
+        backgroundColor: "#FFCE56"
+      },
+      title: {
+        display: true,
+        text: 'Custom Chart Title'
+       }
+    };
+
+
+
+
+
+Chart.pluginService.register({
+  beforeDraw: function(chart) {
+    var width = chart.chart.width,
+        height = chart.chart.height,
+        ctx = chart.chart.ctx,
+        type = chart.config.type;
+
+    if (type == 'doughnut')
+    {
+    	var percent = Math.round((chart.config.data.datasets[0].data[0] * 100) /
+                    (chart.config.data.datasets[0].data[0] +
+                    chart.config.data.datasets[0].data[1]));
+			var oldFill = ctx.fillStyle;
+      var fontSize = ((height - chart.chartArea.top) / 100).toFixed(2);
+      
+      ctx.restore();
+      ctx.font = fontSize + "em sans-serif";
+      ctx.textBaseline = "middle"
+
+      var text = percent + "%",
+          textX = Math.round((width - ctx.measureText(text).width) / 2),
+          textY = (height + chart.chartArea.top) / 2;
+			
+      ctx.fillStyle = chart.config.data.datasets[0].backgroundColor[0];
+      ctx.fillText(text, textX, textY);
+      ctx.fillStyle = oldFill;
+      ctx.save();
+    }
+  }
+});
+
+
+
+var myChart = new Chart(document.getElementById('myChart'), {
+  type: 'doughnut',
+  data: data,
+  options: moreConfigs 
+
+});
+
+
+
+  var chartOne = document.getElementById("myChart").getContext("2d");
+
+  var chartOne = $("#myChart");
+
+
+</script>
+</body>
+</html>
