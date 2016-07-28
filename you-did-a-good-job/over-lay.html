@@ -5,8 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
 	<link rel="stylesheet" href="">
+  <link rel="stylesheet" href="css/uikit.min.css">
+  <link rel="stylesheet" href="hover.css" >
 
-		<link rel="stylesheet" href="css/uikit.min.css">
 
 
 	<style type="text/css">
@@ -18,6 +19,70 @@
 }
 
 
+.picColor{ 
+  width:320px; 
+  height:240px; 
+} 
+
+.picColor:hover { opacity:0.4; background-color:black; width:320px; height:240px; } 
+
+
+/*.color-color{
+width:320px; 
+  height:240px; 
+}*/ 
+
+
+
+/**************************************/
+
+#outer-box {
+  width: 300px;
+  height: 225px;
+  display: block;
+  position: relative;
+}
+
+
+img {
+  width: 300px;
+  height: auto;
+}
+
+
+#inner-box {
+  background: #FD8698;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+  transition: opacity .5s;
+}
+
+#outer-box:hover #inner-box {
+  opacity: .9;
+  transition: opacity .5s;
+}
+
+
+
+
+.outer{
+	width: 300px;
+  height: 225px;
+  display: block;
+  position: relative;
+  background-color: red;
+
+}
+
+
+.inner{
+
+}
 	</style>
 </head>
 <body>
@@ -28,6 +93,31 @@
     <img class="image-style" src="https://img0.etsystatic.com/004/0/6705268/il_fullxfull.374085558_t0jq.jpg" width="" height="" alt="">
     <figcaption class="uk-overlay-panel uk-overlay-fade uk-overlay-background">here is the overlay panel</figcaption>
 </figure>
+
+<br> <br> <br>
+
+<a href="#" class="hvr-shrink">Add to Basket</a>
+
+<br> 
+
+<img src="https://img0.etsystatic.com/004/0/6705268/il_fullxfull.374085558_t0jq.jpg" class="picColor"> </div>
+
+<br> <br> <br>
+
+
+<div id="outer-box">
+
+  <img src="https://img0.etsystatic.com/004/0/6705268/il_fullxfull.374085558_t0jq.jpg" class="color-color">
+
+  <div id="inner-box">
+    <p>This is the overlay!</p>
+  </div>
+
+</div>
+
+<br> <br>
+
+
 	
 </body>
 </html>
