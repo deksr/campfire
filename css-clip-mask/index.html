@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+
+body{
+	background-color: pink;
+}
+
+.clip-circle {
+  -webkit-clip-path: circle(100px at center);
+}
+
+first-image{
+	width: 200px;
+	margin: 20px;
+}
+
+/***********************
+*/
+
+p{
+	font-size: 500px;
+   background-image: url("http://www.petmd.com/sites/default/cache/imagecache/node-gallery-display/shutterstock_19820554-slide1.jpg");
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  bottom: 700px;
+
+
+}
+
+
+.clip-me {  
+  
+position: relative;
+bottom: 1200px;
+-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%); 
+
+} 
+
+
+	</style>
+</head>
+<body>
+	<img class="clip-circle first-image" src="http://www.petmd.com/sites/default/cache/imagecache/node-gallery-display/shutterstock_19820554-slide1.jpg">
+
+
+<br>
+
+  <p class="hopefully-this-works"> D </p>
+
+<br>
+
+  <img class="clip-me" src="http://www.petmd.com/sites/default/cache/imagecache/node-gallery-display/shutterstock_19820554-slide1.jpg">
+
+
+
+
+
+
+	
+</body>
+</html>
