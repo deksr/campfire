@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<style>
+
+	.circle{
+		width: 50px;
+	  height: 50px;
+		background-color: green;
+		border-radius: 50%;
+	}
+
+
+
+	li {
+		display: inline block;
+	}
+
+	.about-me {
+		-webkit-transform:rotate(-20deg);
+	  -moz-transform:rotate(-20deg);
+	  -o-transform:rotate(-20deg); 
+	  position: relative;
+	  top: -200px;
+	}
+
+	.my-skills{
+		-webkit-transform:rotate(-10deg);
+	  -moz-transform:rotate(-10deg);
+	  -o-transform:rotate(-10deg); 
+	  position: relative;
+	  top: -130px;
+	  left: 20px;
+	}
+
+
+/* **********************
+*/
+.second-nav{
+	list-style: none;
+}
+.about-icon{
+	background-color: pink;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: table-cell;
+  vertical-align: middle;
+  display: inline-block;
+
+}
+
+fa-archive{
+	 
+}
+
+.skill-icon{
+	background-color: beige;
+}
+
+
+	.third{
+		background-color: red;
+		height: 50px;
+		width: 50px;
+		border-radius: 50%;
+
+	}
+
+	.first{
+		position: absolute;
+		left: 80px;
+		top: -40px;
+		width: 40px;
+		height: 40px;
+		background-color: red;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 50%;
+	}
+
+
+
+	.second{
+		position: absolute;
+		top: 0px;
+		left: 20px;
+		width: 40px;
+		height: 40px;
+		background-color: red;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 50%;   
+	}
+
+	</style>
+</head>
+<body>
+	<br> <br>
+	<div class="circle"></div>
+
+<ul>
+	<li class="about-me">About Me</li>
+  <li class="my-skills">My Skills</li>
+</ul>
+
+
+<br> ***********************<br>
+
+<div class="third">	
+</div>
+
+<div class="all-buttons first">
+	  <i class="fa fa-archive" aria-hidden="true"></i>
+</div>
+
+<div class=" all-buttons second">
+	  <i class="fa fa-gamepad" aria-hidden="true"></i>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $(".third").click(function(){
+    	console.log("clicked");
+        $(".all-buttons").animate({
+            left: '150px'
+        });
+    });
+});
+</script>
+
+
+	
+</body>
+</html>

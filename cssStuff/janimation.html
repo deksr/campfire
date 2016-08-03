@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+
+	.circle{
+		width: 50px;
+		height: 50px;
+		background-color: grey;
+		border-radius: 50%;
+		text-align: center;
+		vertical-align: middle;
+	  display: table-cell;
+	}
+
+
+
+	.close {
+	  display: none;
+	  position: absolute;
+	  top:23px;
+	  left:30px;
+
+	}
+
+	.item{
+		display: none;
+	}
+
+	.turnoff{
+	/*	background-color: red;
+	*/	display: none;
+
+	}
+
+	.entire-menu{
+		position: fixed;
+
+	}
+
+	</style>
+</head>
+<body>
+	<div class="entire-menu"> 
+
+	<div class="circle"> <span class="lines"> = </span></div>
+
+	<div><span class="close"> x </span></div> 
+	
+
+	<p class="item">item one</p>
+	<p class="item">item two</p>
+</div>
+
+<p>Bacon ipsum dolor amet capicola meatloaf short ribs tongue picanha. Rump swine ham hock sirloin, pancetta biltong alcatra venison kielbasa beef ribs prosciutto turducken. Frankfurter ribeye pork belly spare ribs meatloaf t-bone swine pancetta sausage prosciutto pastrami andouille tri-tip jerky. Short ribs hamburger alcatra tongue meatball landjaeger capicola porchetta strip steak tenderloin picanha. Bacon pork prosciutto cow, tenderloin swine tri-tip fatback jowl pancetta t-bone tongue salami. Alcatra corned beef salami strip steak, short loin prosciutto short ribs swine rump sausage meatloaf picanha cow jowl drumstick. Tenderloin meatloaf strip steak shoulder tail kielbasa cupim pork chuck.
+
+Jowl short ribs chicken flank, pork loin porchetta pig leberkas turkey sausage. Beef ribs ball tip filet mignon cow tongue pastrami boudin pork chicken swine short loin bacon cupim andouille. Pork chop spare ribs ham salami ground round. Ham hock doner capicola, ground round t-bone meatball porchetta chicken pancetta tri-tip meatloaf kielbasa. Alcatra porchetta brisket pancetta.
+
+Pork chop ground round pork belly drumstick flank. Tenderloin t-bone chuck, tri-tip pastrami bresaola shank picanha pig turducken. Shankle ground round jerky pork loin, swine shoulder bresaola sirloin turkey rump cupim ribeye salami pig capicola. Beef tongue pancetta ribeye venison biltong prosciutto meatball picanha porchetta jowl leberkas salami. Meatloaf bacon hamburger, prosciutto salami turkey shankle brisket tail drumstick jerky filet mignon bresaola strip steak tri-tip.
+
+Doner salami shankle frankfurter flank brisket jowl venison capicola tail pork loin ball tip prosciutto rump hamburger. Doner turkey boudin hamburger. Brisket venison rump turducken filet mignon tongue ham ball tip bresaola ham hock jowl pork loin prosciutto. Hamburger frankfurter ground round beef ribs sirloin, boudin jerky meatball doner. Chicken tri-tip rump pork loin meatloaf pork.
+
+Shank alcatra porchetta jowl ribeye, pork loin bresaola turducken sausage pancetta picanha chicken bacon. Pancetta ham hock pork brisket strip steak picanha. Andouille frankfurter doner, prosciutto turducken chicken biltong shank short loin spare ribs. Turkey pork loin venison spare ribs, jowl beef ribs tongue porchetta cow ham.
+
+Does your lorem ipsum text long for something a little meatier? Give our generator a try… it’s tasty!</p>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+
+<script>
+$(document).ready(function(){
+	console.log("clicked")
+  $(".circle").on("click", function(){
+  	$(".item").toggle();
+  	$(".close").toggle();
+  	$(".lines").toggle();
+
+
+  })
+});
+</script>
+	
+</body>
+</html>
