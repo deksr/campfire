@@ -8,7 +8,18 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 <style>
+/*1) always add background color for each media queries. Make a div at the footer showing the current media query background color. This acts a refernece showing at what background color the media query needs to be tweaked.
 
+2) always start mobile first. Always add the meta tag. and use bootstrap col-xs-* 
+
+3) for height of each div add auto. the div will automatically adjust. In case if the conent is touching the bottom of the div then just gove padding.
+
+4) always give ems for fonts and use percentages instead of px;.
+
+5) margin-top on a div moves the whole div a bit further down. padding-top gives some space inside of the div at the top.
+
+6) in bootstrap when you want to make multiple boxes/columns. Use a column before that. see below in html.
+*/ 
 
 .row{
 text-align: center;
@@ -80,7 +91,7 @@ text-align: center;
 		<div class="row">
 			<div class="col-sm-6"> 
 				<div class="box col-sm-6">
-					1) first add meta tags </div>
+					1. first add meta tags </div>
 			</div>
 				<div class=" col-sm-6"> 
 				<div class="box col-sm-6">
@@ -88,6 +99,7 @@ text-align: center;
 			</div>
 		</div>
 	</div>
+
 
 	
 </body>
