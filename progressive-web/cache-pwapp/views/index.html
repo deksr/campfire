@@ -8,7 +8,20 @@
 </head>
 <body>
 	
-<h3>this is progressive web app and cache stuff </h3>
+<h3>This is a progressive web app and cache stuff </h3>
+
+<script>
+
+if ("serviceWorker" in navigator){
+	navigator.serviceWorker.register("/javascripts/sw.js").then(function(registration){
+		console.log("service worker worked! yo ho!", registration.scope)
+	}).catch(function(error){
+			console.log("Devs here is the Error:", error);
+		})
+}
+
+
+</script>
 
 </body>
 </html>
