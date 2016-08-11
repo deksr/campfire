@@ -8,45 +8,48 @@ $(document).ready(function(){
   var poppedimage = [];
 
 
-//   $.ajax({
-//     url: 'sometsecretkey',
-//     method: 'GET',
-//     dataType: "json"
-//   }).then(function(data) {
-//     console.log(data.results); 
+  $.ajax({
+    url: 'secret-key',
+    method: 'GET',
+    dataType: "json"
+  }).then(function(data) {
+    console.log(data.results); 
 
 
-//     theNewsData = data.results 
+    theNewsData = data.results 
 
-//     for (var i = 0; i < theNewsData.length; i++) {
-//       // console.log(theNewsData[i].abstract);
-//       if (theNewsData[i].multimedia == ""){
-//         console.log("no image found")
-//         $(".hello").append('<li class="col-sm-4">' + theNewsData[i].abstract  +'</li>' + '<br>') 
-//       }
-//       else{
-//         $(".hello").append('<li class="col-sm-4">' + theNewsData[i].abstract + '<img class="col-sm-2 img-responsive" src='+ theNewsData[i].multimedia[3].url+ '>' +'</li>' + '<br>');
-//         console.log(theNewsData[i].multimedia[3].url);
-//       }
-//     };
-//   });
+    for (var i = 0; i < theNewsData.length; i++) {
+      // console.log(theNewsData[i].abstract);
+
+      if (theNewsData[i].multimedia == ""){
+        console.log("no image found")
+        $("ul").append('<li class="green-box">' +'<img class="the-image" src= "http://www.photoville.com/wp-content/uploads/2015/08/NYTimes_T_ONLY2.jpg">' + '<div class="add-margin">' + theNewsData[i].abstract + '</div>' +'</li>' + '<br>');
+      }
 
 
+      else{
+        $("ul").append('<li class="green-box">' +'<img class="the-image" src='+ theNewsData[i].multimedia[3].url+ '>' + '<div class="add-margin">' + theNewsData[i].abstract + '</div>' +'</li>' + '<br>');
+        console.log(theNewsData[i].multimedia[3].url);
+      }
+    };
+  });
 
-// // run the service worker
 
-//   (function(){  
-//   	'use strict';
-//      console.log("hello hello");
 
-//     if ('serviceWorker' in navigator) {
-//   	  navigator.serviceWorker
-//   	  .register('./serviceworker.js')
-//   	  .then(function() { 
-//   	  	console.log('Service Worker Registered'); 
-//   	  });
-//     }
-//   })()
+// run the service worker
+
+  (function(){  
+  	'use strict';
+     console.log("hello hello");
+
+    if ('serviceWorker' in navigator) {
+  	  navigator.serviceWorker
+  	  .register('./serviceworker.js')
+  	  .then(function() { 
+  	  	console.log('Service Worker Registered'); 
+  	  });
+    }
+  })()
 
 
 });

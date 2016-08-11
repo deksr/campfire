@@ -1,24 +1,9 @@
-/*body {
-  margin:0;
-  color:green;
-  font-size: 2em;
-}
-*/
-
-
-
-/*html, body {
-  width: 100%;
-  overflow-x: hidden;
-}*/
-
-
 
 @media screen and (min-width: 320px) {
 
-	ul{
+/*	ul{
     list-style-type:none;
-      padding:0;
+    padding:0;
   }
 
 
@@ -27,23 +12,55 @@
     background-color: pink;
   }
 
-  .container-fluid {
-    /* padding-right: 0; 
-     padding-left: 0;
-     margin-right: 0%;
-     margin-left: 0%;
-     overflow: hidden;*/
-
-   /*  padding-right: 0px;
-     padding-left: 0px;*/
-  }
-
-
 
 	.green-box{
     text-justify: inter-word;
     width: 100%;
     font-size: 1.1em;
 	}
+
+	.div-for-image{
+		background-color: red;
+	}*/
+
+	body{
+		background-color: black;
+	}
+
+
+	.headline{
+   color: white;
+	}
+
+	ul{
+    list-style-type:none;
+    padding:0;
+  }
+
+
+  li{
+/*    margin-bottom: 3px;
+*/    background-color: black;
+  }
+
+
+	.green-box{
+    text-justify: inter-word;
+    width: 100%;
+    font-size: 1.1em;
+    color: white;
+	}
+
+	.the-image{
+		background-color: red;
+		width: 100%;
+	}
+
+	.add-margin{
+    background-color: grey;
+    padding: 10px;
+	}
+
+
 
 }
