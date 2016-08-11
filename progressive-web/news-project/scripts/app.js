@@ -2,11 +2,41 @@ console.log("this is app.js");
 
 $(document).ready(function(){
   // e.preventDefault();
+
+
+ // time to display on the time-panel. using iffy here
+(function(){
+
+    var d = new Date();
+    // var month = d.getMonth()
+    // var date = d.getDate()
+    var hours = d.getHours()
+    var minute = d.getMinutes()
+    var day = d.getDay()
+
+    var monthAndDate = d.toString().split(' ').splice(1,3).join(' ')// for month and date
+
+    var amORpm = (hours >= 12) ? "p.m." : "a.m."; //for am or pm
+
+    var weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] //for weekday
+    var weekDay;
+    for (var i = 0; i < weekdays.length; i++) {
+      if (day === i){
+        weekDay=weekdays[i]
+      }
+    }
+    // console.log( monthAndDate + " " + weekDay + " " + hours + ':' +minute + " " +amORpm);
+    // console.log(new Date())
+    // console.log(monthAndDate)
+    $(".time-stamp").append(monthAndDate + " " + weekDay + " " + hours + ':' +minute + " " +amORpm)
+ }())
+
+
+ // ajax for the news
   console.log("ajax-jquery");
   var theNewsData;
   var theimageData = [];
   var poppedimage = [];
-
 
   $.ajax({
     url: 'secret-key',
