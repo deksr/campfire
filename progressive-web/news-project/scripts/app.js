@@ -5,11 +5,8 @@ $(document).ready(function(){
 
 
  // time to display on the time-panel. using iffy here
-(function(){
-
+  function ShowTimePanel(){
     var d = new Date();
-    // var month = d.getMonth()
-    // var date = d.getDate()
     var hours = d.getHours()
     var minute = d.getMinutes()
     var day = d.getDay()
@@ -22,14 +19,16 @@ $(document).ready(function(){
     var weekDay;
     for (var i = 0; i < weekdays.length; i++) {
       if (day === i){
-        weekDay=weekdays[i]
+            weekDay=weekdays[i]
       }
     }
-    // console.log( monthAndDate + " " + weekDay + " " + hours + ':' +minute + " " +amORpm);
-    // console.log(new Date())
-    // console.log(monthAndDate)
+          // console.log( monthAndDate + " " + weekDay + " " + hours + ':' +minute + " " +amORpm);
+          // console.log(new Date())
+          // console.log(monthAndDate)
     $(".time-stamp").append(monthAndDate + " " + weekDay + " " + hours + ':' +minute + " " +amORpm)
- }())
+  }
+
+  ShowTimePanel();
 
 
  // ajax for the news
@@ -39,7 +38,7 @@ $(document).ready(function(){
   var poppedimage = [];
 
   $.ajax({
-    url: 'secret-key',
+    url: "secret-key",
     method: 'GET',
     dataType: "json"
   }).then(function(data) {
@@ -47,37 +46,38 @@ $(document).ready(function(){
 
 
     theNewsData = data.results 
-
     for (var i = 0; i < theNewsData.length; i++) {
-      // console.log(theNewsData[i].abstract);
+      console.log(theNewsData[i].multimedia)
 
       if (theNewsData[i].multimedia == ""){
-        console.log("no image found")
+        console.log("no image found add a stock image" );
         $("ul").append('<li class="green-box">' +'<img class="the-image" src= "http://www.photoville.com/wp-content/uploads/2015/08/NYTimes_T_ONLY2.jpg">' + '<div class="add-margin">' + theNewsData[i].abstract + '</div>' +'</li>' + '<br>');
       }
-
-
+      else if(theNewsData[i].multimedia[3] == undefined || null){
+        console.log("instead print this:" + theNewsData[i].multimedia[2].url);
+        $("ul").append('<li class="green-box">' +'<img class="the-image" src='+ theNewsData[i].multimedia[2].url+ '>' + '<div class="add-margin">' + theNewsData[i].abstract + '</div>' +'</li>' + '<br>');
+      }
       else{
+        console.log("this is the one babay" + theNewsData[i].multimedia[3].url);
         $("ul").append('<li class="green-box">' +'<img class="the-image" src='+ theNewsData[i].multimedia[3].url+ '>' + '<div class="add-margin">' + theNewsData[i].abstract + '</div>' +'</li>' + '<br>');
-        console.log(theNewsData[i].multimedia[3].url);
       }
     };
   });
 
 
 
-// run the service worker
+  // run the service worker
 
   (function(){  
-  	'use strict';
+  'use strict';
      console.log("hello hello");
 
     if ('serviceWorker' in navigator) {
-  	  navigator.serviceWorker
-  	  .register('./serviceworker.js')
-  	  .then(function() { 
-  	  	console.log('Service Worker Registered'); 
-  	  });
+   navigator.serviceWorker
+   .register('./serviceworker.js')
+   .then(function() { 
+    console.log('Service Worker Registered'); 
+   });
     }
   })()
 

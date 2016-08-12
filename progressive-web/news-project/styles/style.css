@@ -1,44 +1,27 @@
 
 @media screen and (min-width: 320px) {
 
-/*	ul{
-    list-style-type:none;
-    padding:0;
-  }
+
+body{
+background-color: black;
+}
+
+.time-panel{
+background-color:  #e63900;
+width: 100%;
+height: 40px;
+color: white;
+font-size: 0.8em;
+text-align: center;
+padding-top: 10px;
+}
 
 
-  li{
-    margin-bottom: 50px;
-    background-color: pink;
-  }
-
-
-	.green-box{
-    text-justify: inter-word;
-    width: 100%;
-    font-size: 1.1em;
-	}
-
-	.div-for-image{
-		background-color: red;
-	}*/
-
-	body{
-		background-color: black;
-	}
-
-	.time-panel{
-		background-color: red;
-		width: 100%;
-		height: 40px;
-	}
-
-
-	.headline{
+.headline{
    color: white;
-	}
+}
 
-	ul{
+ul{
     list-style-type:none;
     padding:0;
   }
@@ -50,22 +33,23 @@
   }
 
 
-	.green-box{
+.green-box{
     text-justify: inter-word;
     width: 100%;
     font-size: 1.1em;
     color: white;
-	}
+    margin-bottom: -18px;
+}
 
-	.the-image{
-		background-color: red;
-		width: 100%;
-	}
+.the-image{
+background-color: red;
+width: 100%;
+}
 
-	.add-margin{
+.add-margin{
     background-color: grey;
     padding: 10px;
-	}
+}
 
 
 
