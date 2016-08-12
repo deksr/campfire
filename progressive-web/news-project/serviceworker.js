@@ -1,4 +1,4 @@
-var dataCacheName = 'breaking-news-v1';
+var dataCacheName = 'breaking-news-v2';
 
 var cacheName = 'breaking-news-v1';
 var filesToCache = [
@@ -47,7 +47,7 @@ self.addEventListener('activate', function(e) {
 
 self.addEventListener('fetch', function(e) {
   console.log('ServiceWorker is being Fetched', e.request.url);
-  var dataUrl = 'secre-key';
+  var dataUrl = 'secretkey';
   if (e.request.url.indexOf(dataUrl) === 0) {
     // Put data handler code here
   } else {

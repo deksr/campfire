@@ -1,0 +1,9 @@
+level 1) https://codelabs.developers.google.com/codelabs/your-first-pwapp/index.html?index=..%2F..%2Fpwa-dev-summit#0
+
+level 2) https://codelabs.developers.google.com/codelabs/web-perf/index.html?index=..%2F..%2Fpwa-dev-summit#0
+
+level 3)https://codelabs.developers.google.com/codelabs/polymer-firebase-pwa/index.html?index=..%2F..%2Fpwa-dev-summit#0
+
+notes for level 1):
+app shell- this is the basic html, css and javscript files that is needed to build the UI. 
+When the user opens a site, quickly the files are loaded to the local device's cache. Localstorage can be used but it's for very little data. Instead use indexdb/ idb/ SimpleDB
