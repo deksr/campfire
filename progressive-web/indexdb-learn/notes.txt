@@ -1,0 +1,5 @@
+running into soo many concepts:
+CORS(CROSS ORIGIN RESOURCE SHARING)
+Same origin policy
+webworkers
+persistance data
