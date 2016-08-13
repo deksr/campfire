@@ -9,8 +9,14 @@
 <body>
 
 	<h1>This is cookie stuff</h1>
+	<h1 id="resultDiv"></h1>
+
+	<script type="text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+	<script type="text/javascript" src="cookies.js"></script>
 
 	<script>
+	// lesson 1:
 	// I set cookies
   document.cookie = "cookieNameOne=somevale"
 
@@ -24,8 +30,37 @@
 
   // go to console and and type document.cookie and it'll show all the cookies
 
-
 	</script>
 	
+
+	<script>
+	// lesson2:
+
+	// var i=1;
+	// 	while(i < 10){
+ //      console.log("les than");
+ //      i++
+	// 	}
+
+	$(document).ready(function() { 
+
+		var visited = 0;
+        //2) Check to see if we have the cookie called visited2 ...
+    if(docCookies.hasItem("visited2")) { //and get it
+      visited = docCookies.getItem("visited2");
+      console.log(visited)
+    }
+
+    visited++; //3)update
+
+    //1)  this sets a fresh new cookie called visited2, number of times, time -infinity. 
+    docCookies.setItem("visited2", visited,  Infinity);
+    $("#resultDiv").text("You have visited this site "+ visited + " times.");
+		
+	})
+
+
+
+	</script>
 </body>
 </html>
