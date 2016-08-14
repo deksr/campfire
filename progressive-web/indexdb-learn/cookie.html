@@ -79,13 +79,35 @@
       var timeDiff = Math.abs(now.getTime() - lastVisitDate.getTime());var daysSinceLastVisit = Math.ceil(timeDiff / (1000 * 3600 * 24));
     }
     docCookies.setItem("lastVisit", new Date(), Infinity);
+		
 		if(newUser) {
 		$resultDiv.text("Welcome to the site!");
 		} else if(daysSinceLastVisit > 20) { $resultDiv.text("Welcome back to the site!");
 		}else{
 		$resultDiv.text("Welcome good user!");
 		}
+
   })
 	</script>
+
+
+	<script>
+	$(document).ready(function() { 
+
+    var cookievalue = "dejavVu";
+
+		if(docCookies.hasItem("my-cookie-name")){
+			console.log("oh! Deja vu!")
+		}
+		else{
+			console.log("Hello stranger")
+		}
+
+		docCookies.setItem("my-cookie-name", cookievalue , Infinity);
+
+  })
+
+	</script>
+
 </body>
 </html>
