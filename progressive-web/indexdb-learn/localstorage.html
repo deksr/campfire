@@ -37,6 +37,7 @@
 
 
 <div id="resultDiv"></div>
+<button class="buts"> click me to delete the key value pair</button>
 	<script>
 	// lesson 2
 $(document).ready(function() {
@@ -49,20 +50,32 @@ $(document).ready(function() {
     if (!getTheTime){
      	// console.log("never visited the site");
      	timesVisited = 0
+
     }
     else{
     	timesVisited = parseInt(getTheTime, 10)
      	timesVisited++
+
     }
     
     localStorage.setItem("times", JSON.stringify(timesVisited));
     $("#resultDiv").text("You have visited this site " +timesVisited +" times."); 
+
   }
   
   else
   {
 	  console.log("no luck your browser doesn't support local storage")
   }
+
+
+
+	$(".buts").on('click',  function(event) {
+		 event.preventDefault();
+		 localStorage.removeItem("names")
+		 localStorage.removeItem("times" )
+
+	});
 
 });
 	</script>
