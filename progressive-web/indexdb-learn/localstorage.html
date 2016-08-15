@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+	<script>
+// lesson 1: local storage a.k.a web storage
+
+// check if the browser supports:
+ if(window.localStorage) {
+  console.log("local storage can be used");
+ }
+ else
+ {
+	console.log("no luck")
+ }
+
+// remember that lcoal storage only takes string data
+// this sets the value to the keys in local storage
+ var names = ["Ray", "Jeanne"]; 
+ localStorage.setItem("names", JSON.stringify(names));
+
+
+// gets te value from the local storage
+ var storedNames = localStorage.getItem("names");
+ console.log(storedNames);//this is brought out but its not javscript objects. so to convert it into objects you need to parse it
+
+ console.log(JSON.parse(storedNames));
+
+
+
+	</script>
+	
+</body>
+</html>
