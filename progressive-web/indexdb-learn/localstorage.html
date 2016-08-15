@@ -79,6 +79,22 @@ $(document).ready(function() {
 
 });
 	</script>
+<br>
+<label> Your Name
+<input class="inputHere usernameClass"type="text" name="userName">
+</label>
+ 
+	<script>
+	
+	if(window.localStorage){
+		$(".inputHere").on("input", function(e) {
+	    var personsName = $(".usernameClass").val();
+	    localStorage.setItem("personsName", JSON.stringify(personsName));
+
+	  })
+	}
+
+	</script>
 	
 </body>
 </html>

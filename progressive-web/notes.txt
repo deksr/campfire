@@ -1,3 +1,11 @@
 Cache-pwapp: I tried this with node. It doesn't work. 
+
 http-server-cache - tried with http server. Works. Since the serviceworker.js file should be in the root file.
+
 your-first-pwapp: this works. Go to work folder and start the google chrome server. 
+
+news-project: is my mini project
+
+inedxedb-learn: here i’m learning cookies, local storage and indexed
+
+
