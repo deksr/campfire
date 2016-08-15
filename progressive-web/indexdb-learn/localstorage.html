@@ -8,6 +8,8 @@
 </head>
 <body>
 
+	<script type="text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
 	<script>
 // lesson 1: local storage a.k.a web storage
 
@@ -30,10 +32,39 @@
  var storedNames = localStorage.getItem("names");
  console.log(storedNames);//this is brought out but its not javscript objects. so to convert it into objects you need to parse it
 
- console.log(JSON.parse(storedNames));
+ console.log(JSON.parse(storedNames));//converted to json
+	</script>
 
 
+<div id="resultDiv"></div>
+	<script>
+	// lesson 2
+$(document).ready(function() {
 
+	if(window.localStorage) {
+    // console.log("local storage can be used");
+    var timesVisited = 0;
+    var getTheTime = localStorage.getItem("times");
+
+    if (!getTheTime){
+     	// console.log("never visited the site");
+     	timesVisited = 0
+    }
+    else{
+    	timesVisited = parseInt(getTheTime, 10)
+     	timesVisited++
+    }
+    
+    localStorage.setItem("times", JSON.stringify(timesVisited));
+    $("#resultDiv").text("You have visited this site " +timesVisited +" times."); 
+  }
+  
+  else
+  {
+	  console.log("no luck your browser doesn't support local storage")
+  }
+
+});
 	</script>
 	
 </body>
