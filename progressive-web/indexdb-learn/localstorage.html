@@ -74,24 +74,34 @@ $(document).ready(function() {
 		 event.preventDefault();
 		 localStorage.removeItem("names")
 		 localStorage.removeItem("times" )
-
+		 localStorage.removeItem("theperson" )
 	});
 
 });
 	</script>
 <br>
 <label> Your Name
-<input class="inputHere usernameClass"type="text" name="userName">
+<input class="usernameClass"type="text" name="userName">
 </label>
  
 	<script>
 	
 	if(window.localStorage){
-		$(".inputHere").on("input", function(e) {
-	    var personsName = $(".usernameClass").val();
-	    localStorage.setItem("personsName", JSON.stringify(personsName));
 
-	  })
+    //see if the there is an item first. if there is then get the item 
+    if(localStorage.getItem("theperson")) {
+      var storedName = JSON.parse(localStorage.getItem("theperson"));
+      console.log(storedName.name)
+      $(".usernameClass").val(storedName.name)
+    }
+
+    // on input try to store the item
+		$(".usernameClass").on("input", function(e) {
+			var personsName = $(".usernameClass").val();
+			var personObject = {"name": personsName}
+	    localStorage.setItem("theperson", JSON.stringify(personObject));
+      console.log("stored")
+	  });
 	}
 
 	</script>
