@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h3>This is index db</h3>
+
+	<script type="text/javascript" src =
+"http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+	<script>
+	// lesson1: here we are checking to see if the browser supports indexb and then create a database
+
+  // Check to see if Indexdb exists
+  // if("indexedDB" in window) { 
+  // // console.log("Indexdb exists")
+  //  }
+
+
+	if("indexedDB" in window) { 
+
+  //this deletes the database
+	// indexedDB.deleteDatabase("ora_idb1",1)/
+
+
+		var db;
+		console.log("index db supported");
+
+		var openRequest = indexedDB.open("ora_idb1",1);//open the database
+
+
+		openRequest.onupgradeneeded = function(e) { 
+			console.log("running onupgradeneeded");
+    }// this console logs at the very first time the database is created
+
+    openRequest.onsuccess = function(e) { 
+    	console.log("running onsuccess"); 
+      db = e.target.result;
+    }
+
+    openRequest.onerror = function(e) { 
+    	console.log("onerror!"); 
+    	console.dir(e);
+    }
+	}
+</script>	
+
+
+<script>
+
+
+</script>
+
+</body>
+</html>
