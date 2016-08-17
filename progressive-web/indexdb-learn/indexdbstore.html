@@ -16,7 +16,13 @@
 	// $(document).ready(function() {
 	// lesson1: here we are checking to see if the browser supports indexb and then create a database
 
-  // Check to see if Indexdb exists
+
+	// to delete a database:
+	// if("indexedDB" in window) { 
+	//   indexedDB.deleteDatabase("ora_idb1",1)
+ //  }
+
+  // Check to see if Indexdb exists in the browser window
   // if("indexedDB" in window) { 
   // // console.log("Indexdb exists")
   //  }
@@ -55,38 +61,77 @@
 // lesson 2: we are creating a table. tables are called as objectStore 
 
 
-	$(document).ready(function() {
-		if("indexedDB" in window) { 
-			var db;
-		  console.log("index db supported");
-		  var openRequest = indexedDB.open("ora_idb1",1); //open the database
+// 	$(document).ready(function() {
+// 		if("indexedDB" in window) { 
+// 			var db;
+// 		  console.log("index db supported");
+// 		  var openRequest = indexedDB.open("ora_idb1",1); //open the database
 
 
-// check to see if the tabel name exisits. if no then create a table
-		  openRequest.onupgradeneeded = function(e) { 
-			console.log("running onupgradeneeded");
-			var thisDB = e.target.result;
-			if(!thisDB.objectStoreNames.contains("firstOS")) {
-            console.log("makng a new object store");
-            thisDB.createObjectStore("firstOS");
-        }
-    }// this console logs at the very first time the database is created
+// // check to see if the tabel name exisits. if no then create a table
+// 		  openRequest.onupgradeneeded = function(e) { 
+// 			console.log("running onupgradeneeded");
+// 			var thisDB = e.target.result;
+// 			if(!thisDB.objectStoreNames.contains("firstOS")) {
+//             console.log("makng a new object store");
+//             thisDB.createObjectStore("firstOS");
+//         }
+//     }// this console logs at the very first time the database is created
 
-    openRequest.onsuccess = function(e) { 
-    	console.log("running onsuccess"); 
-      db = e.target.result;
-      console.dir(db.objectStoreNames);
-    }
+//     openRequest.onsuccess = function(e) { 
+//     	console.log("running onsuccess"); 
+//       db = e.target.result;
+//       console.dir(db.objectStoreNames);
+//     }
 
-    openRequest.onerror = function(e) { 
-    	console.log("onerror!"); 
-    	console.dir(e);
-    };
-		}
-  })
+//     openRequest.onerror = function(e) { 
+//     	console.log("onerror!"); 
+//     	console.dir(e);
+//     };
+// 		}
+//   })
 </script>
 
+<script>
+// lesson 3: creating 
 
+	$(document).ready(function() {
+		if("indexedDB" in window) { //checks if the indexdb exisits
+		  console.log("index db supported");
+		  var db;
+		  var openRequest = indexedDB.open("ora_idb1",1); //create a database
+		  openRequest.onupgradeneeded = function(e) { //connect to database
+		  	console.log("running onupgradeneeded");
+		  	var thisDB = e.target.result; 
+
+		  	if(!thisDB.objectStoreNames.contains("people")) { 
+		  		thisDB.createObjectStore("people", {keyPath: "email"}); //create table called people with primary key
+        }
+
+        if(!thisDB.objectStoreNames.contains("notes")) { 
+        	thisDB.createObjectStore("notes", {autoIncrement:true}); //create table called notes with primary key
+        }
+
+        if(!thisDB.objectStoreNames.contains("logs")) { 
+        	thisDB.createObjectStore("logs",{keyPath:"id", autoIncrement:true});
+        }
+      }
+
+      openRequest.onsuccess = function(e) {
+      	console.log("running onsuccess");
+        db = e.target.result;
+        console.dir(db.objectStoreNames);
+      }
+
+      openRequest.onerror = function(e) { 
+      	console.log("onerror!"); 
+      	console.dir(e);
+      }
+		}
+  })
+
+
+</script>
 
 </body>
 </html>
