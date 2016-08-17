@@ -93,7 +93,49 @@
 </script>
 
 <script>
-// lesson 3: creating 
+// // lesson 3: creating 
+
+// 	$(document).ready(function() {
+// 		if("indexedDB" in window) { //checks if the indexdb exisits
+// 		  console.log("index db supported");
+// 		  var db;
+// 		  var openRequest = indexedDB.open("ora_idb1",1); //create a database
+// 		  openRequest.onupgradeneeded = function(e) { //connect to database
+// 		  	console.log("running onupgradeneeded");
+// 		  	var thisDB = e.target.result; 
+
+// 		  	if(!thisDB.objectStoreNames.contains("people")) { 
+// 		  		thisDB.createObjectStore("people", {keyPath: "email"}); //create table called people with primary key
+//         }
+
+//         if(!thisDB.objectStoreNames.contains("notes")) { 
+//         	thisDB.createObjectStore("notes", {autoIncrement:true}); //create table called notes with primary key
+//         }
+
+//         if(!thisDB.objectStoreNames.contains("logs")) { 
+//         	thisDB.createObjectStore("logs",{keyPath:"id", autoIncrement:true});
+//         }
+//       }
+
+//       openRequest.onsuccess = function(e) {
+//       	console.log("running onsuccess");
+//         db = e.target.result;
+//         console.dir(db.objectStoreNames);
+//       }
+
+//       openRequest.onerror = function(e) { 
+//       	console.log("onerror!"); 
+//       	console.dir(e);
+//       }
+// 		}
+//   })
+
+
+</script>
+
+
+<script>
+// lesson 4: creating indexes
 
 	$(document).ready(function() {
 		if("indexedDB" in window) { //checks if the indexdb exisits
@@ -105,11 +147,15 @@
 		  	var thisDB = e.target.result; 
 
 		  	if(!thisDB.objectStoreNames.contains("people")) { 
-		  		thisDB.createObjectStore("people", {keyPath: "email"}); //create table called people with primary key
+		  		var peopleOS = thisDB.createObjectStore("people", {keyPath: "email"}); //create table called people with primary key
+		  		peopleOS.createIndex("gender", "gender", {unique:false});
+          peopleOS.createIndex("ssn", "ssn", {unique:true});
+          //
         }
 
         if(!thisDB.objectStoreNames.contains("notes")) { 
-        	thisDB.createObjectStore("notes", {autoIncrement:true}); //create table called notes with primary key
+        	var notesOS = thisDB.createObjectStore("notes", {autoIncrement:true}); //create table called notes with primary key
+        	notesOS.createIndex("title","title", {unique:false});
         }
 
         if(!thisDB.objectStoreNames.contains("logs")) { 
