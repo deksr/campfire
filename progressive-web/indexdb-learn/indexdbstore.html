@@ -93,7 +93,7 @@
 </script>
 
 <script>
-// // lesson 3: creating 
+// // lesson 3: creating object stores
 
 // 	$(document).ready(function() {
 // 		if("indexedDB" in window) { //checks if the indexdb exisits
@@ -137,7 +137,58 @@
 <script>
 // lesson 4: creating indexes
 
-	$(document).ready(function() {
+	// $(document).ready(function() {
+	// 	if("indexedDB" in window) { //checks if the indexdb exisits
+	// 	  console.log("index db supported");
+	// 	  var db;
+	// 	  var openRequest = indexedDB.open("ora_idb1",1); //create a database
+	// 	  openRequest.onupgradeneeded = function(e) { //connect to database
+	// 	  	console.log("running onupgradeneeded");
+	// 	  	var thisDB = e.target.result; 
+
+	// 	  	if(!thisDB.objectStoreNames.contains("people")) { 
+	// 	  		var peopleOS = thisDB.createObjectStore("people", {keyPath: "email"}); //create table called people with primary key
+	// 	  		peopleOS.createIndex("gender", "gender", {unique:false});
+ //          peopleOS.createIndex("ssn", "ssn", {unique:true});
+ //          //
+ //        }
+
+ //        if(!thisDB.objectStoreNames.contains("notes")) { 
+ //        	var notesOS = thisDB.createObjectStore("notes", {autoIncrement:true}); //create table called notes with primary key
+ //        	notesOS.createIndex("title","title", {unique:false});
+ //        }
+
+ //        if(!thisDB.objectStoreNames.contains("logs")) { 
+ //        	thisDB.createObjectStore("logs",{keyPath:"id", autoIncrement:true});
+ //        }
+ //      }
+
+ //      openRequest.onsuccess = function(e) {
+ //      	console.log("running onsuccess");
+ //        db = e.target.result;
+ //        console.dir(db.objectStoreNames);
+ //      }
+
+ //      openRequest.onerror = function(e) { 
+ //      	console.log("onerror!"); 
+ //      	console.dir(e);
+ //      }
+	// 	}
+ //  })
+
+
+</script>
+
+
+<h2>Add Person</h2>
+<input type="text" id="name" placeholder="Name"><br/> 
+<input type="email" id="email" placeholder="Email"><br/> 
+<button id="addPerson">Add Person</button>
+
+<script>
+// lesson 5: adding the data
+
+  $(document).ready(function() {
 		if("indexedDB" in window) { //checks if the indexdb exisits
 		  console.log("index db supported");
 		  var db;
@@ -148,14 +199,15 @@
 
 		  	if(!thisDB.objectStoreNames.contains("people")) { 
 		  		var peopleOS = thisDB.createObjectStore("people", {keyPath: "email"}); //create table called people with primary key
-		  		peopleOS.createIndex("gender", "gender", {unique:false});
-          peopleOS.createIndex("ssn", "ssn", {unique:true});
-          //
+
+		  		// peopleOS.createIndex("gender", "gender", {unique:false});
+      //     peopleOS.createIndex("ssn", "ssn", {unique:true});
+          
         }
 
         if(!thisDB.objectStoreNames.contains("notes")) { 
         	var notesOS = thisDB.createObjectStore("notes", {autoIncrement:true}); //create table called notes with primary key
-        	notesOS.createIndex("title","title", {unique:false});
+        	// notesOS.createIndex("title","title", {unique:false});
         }
 
         if(!thisDB.objectStoreNames.contains("logs")) { 
@@ -167,6 +219,31 @@
       	console.log("running onsuccess");
         db = e.target.result;
         console.dir(db.objectStoreNames);
+        $("#addPerson").on("click", function(e){
+        	var name = $("#name").val();
+        	var email = $("#email").val();
+        	console.log("About to add "+name+"/"+email);
+
+        	var transaction = db.transaction(["people"],"readwrite");//here we are first defining the transaction.
+        	// db.transaction(["objectstore"],"type")
+        	//transaction is when you are sending a data to the database. transactions type can be either read only or write.
+
+        	var store = transaction.objectStore("people"); //here we are making the actual transaction to teh obhjectstore
+
+        	var person = {
+        		name:name,
+            email:email,
+            created:new Date().getTime()
+          }
+          var request = store.add(person); //here we are adding
+
+          request.onerror = function(e) { 
+            console.log("Error",e.target.error.name); //some type of error handler
+          }
+          request.onsuccess = function(e) { 
+          	console.log("Woot! Did it");
+          }
+        });
       }
 
       openRequest.onerror = function(e) { 
@@ -175,6 +252,7 @@
       }
 		}
   })
+
 
 
 </script>
