@@ -224,11 +224,11 @@
         	var email = $("#email").val();
         	console.log("About to add "+name+"/"+email);
 
-        	var transaction = db.transaction(["people"],"readwrite");//here we are first defining the transaction.
+        	var transaction = db.transaction(["people"],"readwrite");//here we are first defining the transaction. 
         	// db.transaction(["objectstore"],"type")
-        	//transaction is when you are sending a data to the database. transactions type can be either read only or write.
+        	//transaction is when you are sending a data to the database. transactions type can be either read only or readwrite. readwrite is used when we are adding the data to teh database
 
-        	var store = transaction.objectStore("people"); //here we are making the actual transaction to teh obhjectstore
+        	var store = transaction.objectStore("people"); //here we are making the actual transaction to the obhjectstore
 
         	var person = {
         		name:name,
