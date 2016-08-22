@@ -10,7 +10,9 @@ push-notifications - empty
 
 your-first-pwapp: this works. Go to work folder and start the google chrome server. 
 
-learn-cache: here I’m learning cache-ing
+learn-cache: here I’m learning cache-ing. There are two files. application-cache:this one is deprecated. Another file is cache-storage
+
+service-worker-basics:
 
 
 
