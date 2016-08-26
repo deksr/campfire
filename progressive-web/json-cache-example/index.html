@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+	problems I'm facing:
+
+	First time when the page loads, browser checks if the service worker feature is presnt ot not then it tries to register by installing. It is not caching anything
+
+ <script type="text/javascript" src="jquery-2.1.4.js"></script>
+
+ <script type="text/javascript" src="ajax-files.js"></script>
+
+
+<script>
+
+  (function(){  
+  'use strict';
+     console.log("hello hello i'm testing if navigator has service worker");
+
+    if ('serviceWorker' in navigator) {
+   navigator.serviceWorker
+   .register('./service-worker-file.js')
+   .then(function() { 
+    console.log('Service Worker Registered'); 
+   });
+    }
+  })()
+
+</script>
+
+	
+</body>
+</html>

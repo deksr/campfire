@@ -51,12 +51,13 @@ $(document).ready(function(){
 
       if (theNewsData[i].multimedia == ""){
         console.log("no image found add a stock image" );
-        $("ul").append('<li class="green-box">' +'<img class="the-image" src= "http://www.photoville.com/wp-content/uploads/2015/08/NYTimes_T_ONLY2.jpg">' + '<div class="add-margin">' + theNewsData[i].abstract + '</div>' +'</li>' + '<br>');
+        $("ul").append('<li class="green-box">' +'<img class="the-image" src= "http://www.goseekadventures.com/wp-content/uploads/2014/06/New-York-Times-Social-Logo.jpg">' + theNewsData[i].abstract + '</div>' +'</li>' + '<br>');
       }
-      else if(theNewsData[i].multimedia[3] == undefined || null){
-        console.log("instead print this:" + theNewsData[i].multimedia[2].url);
-        $("ul").append('<li class="green-box">' +'<img class="the-image" src='+ theNewsData[i].multimedia[2].url+ '>' + '<div class="add-margin">' + theNewsData[i].abstract + '</div>' +'</li>' + '<br>');
+      else if((theNewsData[i].multimedia[3] == undefined || null)||(theNewsData[i].multimedia[2] == undefined || null) || (theNewsData[i].multimedia[1] == undefined || null)){
+        console.log("if 4 images are not there in multimedia then print the the first one in the array:" + theNewsData[i].multimedia[1].url);
+        $("ul").append('<li class="green-box">' +'<img class="the-image" src='+ theNewsData[i].multimedia[0].url+ '>' + '<div class="add-margin">' + theNewsData[i].abstract + '</div>' +'</li>' + '<br>');
       }
+      
       else{
         console.log("this is the one babay" + theNewsData[i].multimedia[3].url);
         $("ul").append('<li class="green-box">' +'<img class="the-image" src='+ theNewsData[i].multimedia[3].url+ '>' + '<div class="add-margin">' + theNewsData[i].abstract + '</div>' +'</li>' + '<br>');
@@ -69,8 +70,16 @@ $(document).ready(function(){
   // run the service worker
 
   (function(){  
-  'use strict';
-     console.log("hello hello");
+    'use strict';
+
+    console.log("hello hello");
+
+
+    if ('caches' in window) { 
+      console.log("cache is present in the window");
+    }
+
+
 
     if ('serviceWorker' in navigator) {
    navigator.serviceWorker
