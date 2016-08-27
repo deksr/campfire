@@ -7,7 +7,14 @@ $(document).ready(function(){
     dataType: "json"
   }).then(function(data) {
   	console.log("what?")
-    console.log(data.employees); 
+    console.log(data.employees);
+    var employeeObjects =  data.employees
+
+	  for (var i = 0; i < employeeObjects.length; i++) {
+	  	console.log(employeeObjects[i].firstName)
+		  $("ul").append('<li>'  + employeeObjects[i].firstName  +'</li>' + '<br>');
+	  };
+    
   })
 
 })
