@@ -38,7 +38,7 @@ $(document).ready(function(){
   var poppedimage = [];
 
   $.ajax({
-    url: "secret-key",
+    url: "secret key",
     method: 'GET',
     dataType: "json"
   }).then(function(data) {
@@ -47,7 +47,8 @@ $(document).ready(function(){
 
     theNewsData = data.results 
     for (var i = 0; i < theNewsData.length; i++) {
-      console.log(theNewsData[i].multimedia)
+      console.log(theNewsData[i].multimedia);
+
 
       if (theNewsData[i].multimedia == ""){
         console.log("no image found add a stock image" );
@@ -63,6 +64,7 @@ $(document).ready(function(){
         $("ul").append('<li class="green-box">' +'<img class="the-image" src='+ theNewsData[i].multimedia[3].url+ '>' + '<div class="add-margin">' + theNewsData[i].abstract + '</div>' +'</li>' + '<br>');
       }
     };
+
   });
 
 

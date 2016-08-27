@@ -1,8 +1,3 @@
-
-
-
-
-
 var dataCacheName = 'breaking-news-v2';
 
 var cacheName = 'breaking-news-v1';
@@ -47,7 +42,7 @@ self.addEventListener('fetch', function(e) {
         .then(function(response) {
           return caches.open(dataCacheName).then(function(cache) {
             cache.put(e.request.url, response.clone());
-            console.log('ServiceWorker Fetched & Cached the Data');
+            console.log('ServiceWorker Fetched & Cached the Data' + response);
             return response;
           });
         })
