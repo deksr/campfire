@@ -18,8 +18,9 @@ self.addEventListener('install', function(event) {
         return fetch('json-data.json').then(function(response) {
           return response.json();
         }).then(function(files) {
-          console.log('[install] Adding files from JSON file: ', files);
-          return cache.addAll(files);
+          // below code brings in the data from the json files
+          console.log('[install] Adding files from JSON file: ', files.employees);
+          return cache.addAll(files.employees);
         });
       })
       .then(function() {
@@ -32,6 +33,13 @@ self.addEventListener('install', function(event) {
       })
   );
 });
+
+// e.waitUntil(
+//     caches.open(dataCacheName).then(function(cache) {
+//       console.log('Caching the app shell');
+//       return cache.addAll(filesToCache);
+//     })
+//   );
 
 self.addEventListener('fetch', function(event) {
   event.respondWith(
