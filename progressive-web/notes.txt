@@ -14,7 +14,7 @@ news-project: is my mini project
 
 notes.txt: this note
 
-push-notifications - empty
+push-notifications - I tried this but it is giving me errors. especially in the index file where i’m trying to register through getsubscription.
 
 service-worker-basics: here i’m learning the basics of service workers. Although covered in news-project and your-first-pwapp, this has notes.
 

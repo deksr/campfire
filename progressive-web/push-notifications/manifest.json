@@ -1,0 +1,24 @@
+{
+  "short_name": "lm",
+  "name": "lm-means-learning-manifest",
+  "icons": [
+    {
+     "src": "images/images.jpeg",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "images/ebhi.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "images/gowe.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "landscape"
+}
