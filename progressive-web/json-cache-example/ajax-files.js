@@ -87,19 +87,13 @@ $(document).ready(function(){
       }
 
       
-     
-  
-
-
-  
-  
       openRequest.onerror = function(e) { 
         console.log("onerror!"); 
         console.dir(e);
       };
     }
 
-    /////
+    /////below was used to render the data in jquery by ajaxing and then rendering the data onto the document
 
 	  // for (var i = 0; i < employeeObjects.length; i++) {
 	  // 	console.log(employeeObjects[i].firstName)
