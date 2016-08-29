@@ -4,11 +4,15 @@ http-server-cache - tried with http server. Works. Since the serviceworker.js fi
 
 inedxedb-learn: here i’m learning cookies, local storage and indexeddb
 
+json-cahe-example: this works. I has indexed, service workers and everything working. You are done baby! :-)
+
 learn-cache: here I’m learning cache-ing. There are two files. application-cache.html:this one is deprecated. Another file is cache-storage.html: for this refer to service-worker-basics. 
 
 manifest-basic: learning manifest stuff
 
 news-project: is my mini project
+
+notes.txt: this note
 
 push-notifications - empty
 
