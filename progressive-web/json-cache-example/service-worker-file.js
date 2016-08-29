@@ -79,7 +79,9 @@ var dataCacheName = 'json-basic-serviceworker-v1';
 var CacheTheseFiles = [
   '/',
   '/index.html',
-  'ajax-files.js'
+  '/ajax-files.js',
+  '/styles.css'
+
 ];
 
 self.addEventListener('install', function(e) {
