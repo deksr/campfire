@@ -46,7 +46,9 @@ self.addEventListener('fetch', function(e) {
     // }else {
       e.respondWith(
       caches.match(e.request).then(function(response) {
-        console.log("how many teimes teach these people")
+        console.log("tring to fetch from the cache")
+        console.log(response)
+        console.log(e.request)
         return response || fetch(e.request);
       })
       );
