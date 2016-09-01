@@ -37,6 +37,24 @@ $(document).ready(function(){
   var theimageData = [];
   var poppedimage = [];
 
+  function appendingData(theNewsData){
+    console.log(theNewsData)
+
+    console.log("appending data function is running");
+    if (theNewsData.multimedia == ""){
+      console.log("no image found add a stock image" );
+      $("ul").append('<li class="green-box">' +'<img class="the-image" src= "http://www.goseekadventures.com/wp-content/uploads/2014/06/New-York-Times-Social-Logo.jpg">' + theNewsData.abstract + '</div>' +'</li>' + '<br>');
+      }
+    else if((theNewsData.multimedia[3] == undefined || null)||(theNewsData.multimedia[2] == undefined || null) || (theNewsData.multimedia[1] == undefined || null)){
+      console.log("if 4 images are not there in multimedia then print the the first one in the array:" + theNewsData.multimedia[1].url);
+      $("ul").append('<li class="green-box">' +'<img class="the-image" src='+ theNewsData.multimedia[0].url+ '>' + '<div class="add-margin">' + theNewsData.abstract + '</div>' +'</li>' + '<br>');
+    }
+    else{
+      console.log("this is the one babay" + theNewsData.multimedia[3].url);
+      $("ul").append('<li class="green-box">' +'<img class="the-image" src='+ theNewsData.multimedia[3].url+ '>' + '<div class="add-margin">' + theNewsData.abstract + '</div>' +'</li>' + '<br>');
+    }
+  }
+
   $.ajax({
     url: "secret-key",
     method: 'GET',
@@ -63,7 +81,9 @@ $(document).ready(function(){
 
             var allemployees = res.value;
             console.log(allemployees);
-            $("ul").append('<li>'  + allemployees.title  + '</li>' + '<br>');
+            appendingData(allemployees);
+
+            // $("ul").append('<li>'  + allemployees.title  + '</li>' + '<br>');
             res.continue(); 
           }
         }
@@ -78,9 +98,10 @@ $(document).ready(function(){
       };  
     }
    }).done(function(data) {
+    console.log("there is internet connection and this is the results from ajax")
     console.log(data.results); 
     theNewsData = data.results;
-    console.log("wtf this doesnt work becaus ether is no internet connection" + theNewsData )
+
 
     // appending the data onto the dom
     for (var i = 0; i < theNewsData.length; i++) {
@@ -163,26 +184,26 @@ $(document).ready(function(){
 
   // run the service worker
 
-  // (function(){  
-  //   'use strict';
+  (function(){  
+    'use strict';
 
-  //   console.log("hello hello");
-
-
-  //   if ('caches' in window) { 
-  //     console.log("cache is present in the window");
-  //   }
+    console.log("hello hello");
 
 
+    if ('caches' in window) { 
+      console.log("cache is present in the window");
+    }
 
-  //   if ('serviceWorker' in navigator) {
-  //  navigator.serviceWorker
-  //  .register('./serviceworker.js')
-  //  .then(function() { 
-  //   console.log('Service Worker Registered'); 
-  //  });
-  //   }
-  // })()
+
+
+    if ('serviceWorker' in navigator) {
+   navigator.serviceWorker
+   .register('./serviceworker.js')
+   .then(function() { 
+    console.log('Service Worker Registered'); 
+   });
+    }
+  })()
 
 
 });
