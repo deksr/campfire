@@ -41,21 +41,16 @@ self.addEventListener('activate', function(e) {
 self.addEventListener('fetch', function(e) {
   console.log('ServiceWorker is being Fetched', e.request.url);
     var dataUrl = 'secret-key';
-    if (e.request.url.indexOf(dataUrl) === 0) {
-    // Put data handler code here
-    console.log("data-handler code is runing");
-      if("indexedDB" in window) { 
-
-      }
-
-
-    }else {
+    // if (e.request.url.indexOf(dataUrl) === 0) {
+    //   console.log("data-handler code is runing");       
+    // }else {
       e.respondWith(
       caches.match(e.request).then(function(response) {
+        console.log("how many teimes teach these people")
         return response || fetch(e.request);
       })
       );
-    } 
+    // } 
 });
 
 

@@ -105,7 +105,7 @@ $(document).ready(function(){
               console.log(res.value);
 
               var allemployees = res.value;
-              console.log(allemployees)
+              console.log(allemployees);
               $("ul").append('<li>'  + allemployees.title  +'</li>' + '<br>');
               res.continue(); 
             }
@@ -176,6 +176,30 @@ $(document).ready(function(){
 
 });
 
+
+
+      var db;
+      var openRequest = indexedDB.open("news-project-idb",1);
+      
+      openRequest.onsuccess = function(e){        
+        db = e.target.result;
+        var transaction = db.transaction(["newsItems"],"readonly");
+        var store = transaction.objectStore("newsItems");
+        var cursor = store.openCursor();
+        cursor.onsuccess = function(e) { 
+          var res = e.target.result;
+          if(res) {
+            var allNewsStuff = res.value;
+            console.log(allNewsStuff);
+
+            var ulTag = document.createElement("ul");
+            var liTag = document.createTextNode("This is new.");
+            ulTag.appendChild(liTag);
+            res.continue();
+          }
+        }
+      }
+      
 
 
 // simple pop example 
