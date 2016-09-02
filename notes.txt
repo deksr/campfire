@@ -1,0 +1,21 @@
+anim-css: an animation-webkit transform that swings an image
+
+animate:using a css library called animate.css to create animation
+
+boots: mostly worked on bootstrap layouts
+
+chart: created a chart using chart.js
+
+clip-mask: created clip masks on images
+
+css-stuff: responsive layouts, media queries
+
+html5new: some new tags in html5
+
+mail-feature: how to mail.
+
+mail-feature-auth: using this to learn encryption
+
+progressive web: this contains folder with progressive web app experiments	
+
+you-did-a-god-job: have used a css/js library for layout
