@@ -7,7 +7,56 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	hello
+
+	<label>Message:</label>
+  <input class="your-message" type="text" name="messageWritten"><br>
+  <input type="submit" value="Submit" class="sub-button">
+
 	
+	
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <script src="/javascripts/aes.js"> </script>
+
+
+
+	<script type="text/javascript">
+
+	$('.sub-button').on('click', function(e) {
+  e.preventDefault();
+  console.log("button clicked")
+   
+  var theMessage = $(".your-message").val();
+  console.log(theMessage);
+
+  // var encrypted = CryptoJS.SHA3(theMessage);
+  // var encryptedMessage = encrypted.toString(CryptoJS.enc.Base64)
+  // console.log(encryptedMessage)
+
+  var encrypted = CryptoJS.AES.encrypt(theMessage, "pass phrase").toString();
+  console.log(encrypted)
+
+
+
+   
+
+  $.ajax({
+	  url: "/pluto",
+	  type: "POST",
+	  data: {
+	  	messagesend: encrypted
+	  },
+	  dataType: "json"
+  }).done(function(msg) {
+    console.log("done function")
+   });
+    
+
+
+});
+
+
+
+	</script>
 </body>
 </html>

@@ -1,0 +1,18 @@
+1) this module will be used for the server
+npm install crypto module to nodemodule from 
+https://github.com/brix/crypto-js
+> npm install crypto-js --save
+
+2)then headover to https://github.com/sytelus/CryptoJS
+use roolup folders since it doesn;t need any module dependency for the front end. this code will be used for the browser
+and copy aes.js into javscript folder
+
+
+3)encrypt in your ajax script file:
+var encrypted = CryptoJS.AES.encrypt(theMessage, "pass phrase").toString();
+
+4)dcrypt on the server:
+	var decrypted = CryptoJS.AES.decrypt(gotEncryptedmessage, "pass phrase").toString(CryptoJS.enc.Utf8);
+
+
+
