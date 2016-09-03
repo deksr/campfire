@@ -10,7 +10,7 @@ clip-mask: created clip masks on images
 
 css-stuff: responsive layouts, media queries
 
-encrypt-data-example: trying encryption using crypto
+encrypt-data-example: figured out how to encrypt and decrypt using crypto-js
 
 html5new: some new tags in html5
 
