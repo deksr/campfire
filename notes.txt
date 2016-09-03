@@ -10,6 +10,8 @@ clip-mask: created clip masks on images
 
 css-stuff: responsive layouts, media queries
 
+encrypt-data-example: trying encryption using crypto
+
 html5new: some new tags in html5
 
 mail-feature: how to mail.

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>
+
+<script src="core.min.js"> </script>
+
+<script src="sha3.js"> </script>
+
+
+<script>
+console.log("hello");
+
+
+
+// var ciphertext = CryptoJS.AES.encrypt('my message', 'secret key 123');
+
+// var encrypted = CryptoJS.SHA3('my message', 'secret key 123');
+var encrypted = CryptoJS.SHA3('mwy');
+// alert(encrypted.toString(CryptoJS.enc.Base64));
+
+
+
+
+var decrypt= CryptoJS.SHA3(encrypted);
+
+
+console.log(encrypted.toString(CryptoJS.enc.Base64))
+console.log(decrypt.toString(CryptoJS.enc.Base64))
+
+
+
+</script>
+</body>
+</html>
