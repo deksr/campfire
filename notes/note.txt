@@ -1,0 +1,48 @@
+This is the notes from books I've read:
+
+HTTP:
+^^^^^^
+
+MIME : 
+Because the Internet hosts many thousands of different data types, HTTP carefully tags each object being transported through the Web with a data format label called a MIME type
+
+transaction: 
+An HTTP transaction consists of a request command (sent from cli- ent to server), and a response result (sent from the server back to the client).
+
+methods:
+HTTP supports several different request commands, called HTTP methods. 
+
+statuscode:
+Every HTTP response message comes back with a status code.
+
+did you know?
+Web Pages Can Consist of Multiple Objects
+An application often issues multiple HTTP transactions to accomplish a task. For example, a web browser issues a cascade of HTTP transactions to fetch and display a graphics-rich web page. The browser performs one transaction to fetch the HTML “skeleton” that describes the page layout, then issues additional HTTP transactions for each embedded image, graphics pane, Java applet, etc. These embedded resources might even reside on different servers. Thus, a “web page” often is a collection of resources, not a single resource.
+
+
+Messages: 
+HTTP messages sent from web clients to web servers are called request messages. Messages from servers to clients are called response messages.
+
+Connections, IP Addresses, and Port Numbers:
+Before an HTTP client can send a message to a server, it needs to establish a TCP/IP connection between the client and server using Internet protocol (IP) addresses and port numbers.
+Setting up a TCP connection is sort of like calling someone at a corporate office. First, you dial the company’s phone number. This gets you to the right organization. Then, you dial the specific extension of the person you’re trying to reach.
+In TCP, you need the IP address of the server computer and the TCP port number associated with the specific software program running on the server.
+This is all well and good, but how do you get the IP address and port number of the HTTP server in the first place? Why, the URL, of course! We mentioned before that URLs are the addresses for resources, so naturally enough they can provide us with the IP address for the machine that has the resource. Let’s take a look at a few URLs:
+    http://207.200.83.29:80/index.html
+    http://www.netscape.com:80/index.html
+    http://www.netscape.com/index.html
+The first URL has the machine’s IP address, “207.200.83.29”, and port number, “80”.
+The second URL doesn’t have a numeric IP address; it has a textual domain name, or hostname (“www.netscape.com”). The hostname is just a human-friendly alias for an IP address. Hostnames can easily be converted into IP addresses through a facility called the Domain Name Service (DNS), so we’re all set here, too. We will talk much more about DNS and URLs in Chapter 2.
+The final URL has no port number. When the port number is missing from an HTTP URL, you can assume the default value of port 80.
+With the IP address and port number, a client can easily communicate via TCP/IP. Figure 1-10 shows how a browser uses HTTP to display a simple HTML resource that resides on a distant server.
+Here are the steps:
+(a) The browser extracts the server’s hostname from the URL.
+(b) The browser converts the server’s hostname into the server’s IP address.
+(c) The browser extracts the port number (if any) from the URL.
+(d) The browser establishes a TCP connection with the web server.
+(e) The browser sends an HTTP request message to the server.
+(f) The server sends an HTTP response back to the browser.
+(g) The connection is closed, and the browser displays the document.
+
+Protocol Versions
+current version is HTTP/1.1
