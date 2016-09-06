@@ -33,9 +33,11 @@
   // var encryptedMessage = encrypted.toString(CryptoJS.enc.Base64)
   // console.log(encryptedMessage)
 
-  var encrypted = CryptoJS.AES.encrypt(theMessage, "pass phrase").toString();
-  console.log(encrypted)
+  var secretkey = Math.random().toString() //this generates random numbers. we need a copy of this secretkey number in the server to decrypt. So send this along with the data
 
+
+  var encrypted = CryptoJS.AES.encrypt(theMessage, secretkey).toString();
+  console.log(encrypted)
 
 
    
@@ -44,7 +46,8 @@
 	  url: "/pluto",
 	  type: "POST",
 	  data: {
-	  	messagesend: encrypted
+	  	messagesend: encrypted,
+	  	thesecret: secretkey
 	  },
 	  dataType: "json"
   }).done(function(msg) {
@@ -56,6 +59,12 @@
 });
 
 
+
+	</script>
+
+	<script type="text/javascript">
+
+console.log(Math.random().toString())
 
 	</script>
 </body>

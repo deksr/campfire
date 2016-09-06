@@ -17,8 +17,9 @@ router.post('/pluto', decrypter);
 function decrypter(req, res) {
 	console.log(req.body.messagesend);
 	var gotEncryptedmessage = req.body.messagesend;
+	var gotsecretkey = req.body.thesecret
 
-	var decrypted = CryptoJS.AES.decrypt(gotEncryptedmessage, "pass phrase").toString(CryptoJS.enc.Utf8);
+	var decrypted = CryptoJS.AES.decrypt(gotEncryptedmessage, gotsecretkey).toString(CryptoJS.enc.Utf8);
 
   console.log(decrypted)
 
