@@ -1,0 +1,47 @@
+javascript concepts:
+array
+callback: 
+closure
+context(this)
+dom
+events
+functions
+iife
+inheritance
+oop
+objects
+own properties(Properties that exist directly on an object.)
+primitive types
+Prototype Chains
+Prototypes
+Scope
+Buzz(javascript audio library)
+
+
+
+css tech/concept:
+Breakpoint
+mediaqueries
+Viewport
+
+
+
+html tech/concepts:
+Element
+
+
+mvc:
+angular js
+Controllers
+crud
+data binding
+directives
+filters
+firebase(A freemium storage solution for adding a web application backend that saves and syncs data with minimal effort.)
+grunt
+heroku
+mvvm
+services
+single page applications(spa)
+templates(HTML documents with Angular markup.)
+ui bootstrap
