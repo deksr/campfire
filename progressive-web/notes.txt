@@ -10,7 +10,7 @@ learn-cache: here I’m learning cache-ing. There are two files. application-cac
 
 manifest-basic: learning manifest stuff
 
-news-project: is my mini project. It is working but it doesn’t even need service workers. When the ajax fails then store. 
+news-project: is my mini project. It is working but it doesn’t even need service workers. When the ajax fails then store. i have to add set time out(this bit is incomplete)
 
 notes.txt: this note
 
