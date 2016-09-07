@@ -35,23 +35,51 @@
 
 <script>
 
-var someExpression = 10
-switch(10){
-	case 2:
-	console.log("someExpression is: 2 " )
-	break;
+// var someExpression = 10
+// switch(10){
+// 	case 2:
+// 	console.log("someExpression is: 2 " )
+// 	break;
 
-	case 6:
-	console.log("someExpression is: 6")
-	break;
+// 	case 6:
+// 	console.log("someExpression is: 6")
+// 	break;
 
-  default:
-  console.log("ola") //if it is 10 then then it says ola
-}
+//   default:
+//   console.log("ola") //if it is 10 then then it says ola
+// }
 
 </script>
 
+<script>
+// nested functions
+var funkOne = function(){
+	 console.log("from funk one")
+	 var insideFunk = function(passparam){ 
+	   console.log("from funk one" + passparam)
+	 }
 
+ insideFunk("says hello")
+}
+
+funkOne()
+
+</script>
+
+<script>
+// functions inside objects
+var rabbit = {};
+
+rabbit.speak = "hello"
+rabbit.yells = function(){
+	console.log("I'm yelling")
+}
+rabbit.yells();
+
+console.log(rabbit)
+
+
+</script>
 	
 </body>
 </html>
