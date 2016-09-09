@@ -53,30 +53,103 @@
 
 <script>
 // nested functions
-var funkOne = function(){
-	 console.log("from funk one")
-	 var insideFunk = function(passparam){ 
-	   console.log("from funk one" + passparam)
-	 }
+// var funkOne = function(){
+// 	 console.log("from funk one")
+// 	 var insideFunk = function(passparam){ 
+// 	   console.log("from funk one" + passparam)
+// 	 }
 
- insideFunk("says hello")
-}
+//  insideFunk("says hello")
+// }
 
-funkOne()
+// funkOne()
 
 </script>
 
 <script>
 // functions inside objects
-var rabbit = {};
+// var rabbit = {};
 
-rabbit.speak = "hello"
-rabbit.yells = function(){
-	console.log("I'm yelling")
+// rabbit.speak = "hello",
+// rabbit.yells = function(word){
+// 	console.log("I'm yelling" + word)
+// }
+// rabbit.yells("at you");
+
+// console.log(rabbit)
+
+
+</script>
+
+<script>
+// methods in javascript
+
+// function juicer(fruits, veg){
+// 	console.log(this.location+ " is grinding " + fruits + " " + veg)
+// }
+
+
+// var shopOne = {
+// 	location: "east",
+// 	drinks:juicer
+// }
+
+// var shopTwo = {
+// 	location: "west",
+// 	drinks:juicer
+// }
+
+// shopOne.drinks("apple", "carrot")
+// shopTwo.drinks("mango", "cucumber")
+
+// juicer.apply(shopOne, ["banana", "spinach"])
+
+// juicer.call({location: "south"}, "grapes", "artichoke")
+
+
+// // this is how methods are written. we can even use built in methods
+// function anotherMethod(pn,age){
+// 	this.personName = pn,
+// 	this.age = age
+// }
+
+
+// // this is how methods are written. we can even use built in methods
+// // 1. create a function with this
+// function createUppercase(word){
+// 	this.englishWord = word
+// 	console.log("ran")
+// }
+
+// // create an object
+// var upperobject = {
+//   runUc: createUppercase
+// }
+
+
+// //
+// upperobject.runUc("hello")
+
+</script>
+
+<script>
+// creating prototype
+
+
+// create a method
+function Person(name, age){
+ this.name = name;
+ this.age = age;
 }
-rabbit.yells();
 
-console.log(rabbit)
+// create new objects
+var myFather = new Person("John", 50);
+console.log(myFather.name)
+
+
+// ad a prototype peroperty
+Person.prototype.nationality  ="British"
+console.log(myFather.nationality)
 
 
 </script>
