@@ -2,6 +2,10 @@ Cache-pwapp: I tried this with node. It doesn't work.
 
 http-server-cache - tried with http server. Works. Since the serviceworker.js file should be in the root file.
 
+indexeddb-for-mobile: used this to check if db exists on mobile devices. 
+$ npm install -g weinre. i used weinre to remote debug chrome iOS
+
+
 inedxedb-learn: here i’m learning cookies, local storage and indexeddb
 
 json-cahe-example: this works. I has indexed, service workers and everything working. You are done baby! :-)
