@@ -204,6 +204,39 @@
   console.log(cap)
 
 
+// **********************
+// Nots ure when I can use this but it will be useful to check if a property exists
+// if(!(rapone in somestrayObject))
+
+	var somearray = [{
+		rapperOne: "rich gang", 
+		rapperTwo: "youngthug", 
+		rapperThree: "rich homie quan"
+	}]
+
+
+	function evaluateMePlease(sendingarray){
+		var somestrayObject = {}; //create an empty object
+
+		for (var i = 0; i < sendingarray.length; i++) {
+			console.log(sendingarray[i].rapperOne)
+			var rapone = sendingarray[i].rapperOne //store in the var
+			if(!(rapone in somestrayObject)){ //check to see if the empty object has rapone as the property
+        console.log("not found");
+        function storeIntoObject(fk, co) { //just like the previous one where we are creating the object from scratch
+          somestrayObject[fk] = co;
+        }
+        	storeIntoObject("rapperOne", "kanye");
+			}	
+	  };
+	  console.log(somestrayObject)
+	}
+
+
+	evaluateMePlease(somearray);
+
+
+
 	</script>
 </body>
 </html>
