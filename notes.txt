@@ -12,7 +12,7 @@ css-stuff: responsive layouts, media queries
 
 encrypt-data-example: figured out how to encrypt and decrypt using crypto-js
 
-front-end-tec-con: here I’m learning common technologies/concepts used in front-end development(some concepts like closures, callbacks etc) and has front-end api(like sound too)
+front-end-tec-con: (here I’m learning common technologies/concepts used in front-end development(some concepts like closures, callbacks etc) and has front-end api(like sound too)). Also in funky.html, learning how objects can be manipulated
 
 html5new: some new tags in html5
 
