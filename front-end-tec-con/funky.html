@@ -13,26 +13,35 @@
 
 	<script>
 
-	// var captureClass = document.querySelector(".color-me");//capture an element using class
+	// 1) capture element/values from the dom and pass that as arguments to functions.
+  // 2) when you recieve the data, add a method to it. 
+  // 3) capture data from dom and create objects. you can also create prototype for objects. "prototype" and "new" are used together
+  // 4) creating object using another object and then giving them super powers(this is more like making a photocopy of another object)
 
-	// function addingColor(captured){
-	// 	console.log(captured.innerHTML="nmcnm")
+
+
+
+	// 1) capture element/values from the dom and pass that as arguments to functions.
+	var captureClass = document.querySelector(".color-me");//capture an element using class
+
+	function addingColor(captured){
+		console.log(captured.innerHTML="nmcnm")
 		
-	// 	function playAround(e){
- //      console.log(e)
-	// 	}
+		function playAround(e){
+      console.log(e)
+		}
 
-	// 	captured.onmousemove= function(e){
-	// 				playAround(e)
-	// 	}
-	// }
+		captured.onmousemove= function(e){
+					playAround(e)
+		}
+	}
 
- //  addingColor(captureClass)
+  addingColor(captureClass)
 
 
 // *********************
+ // 2) when you recieve the data from server or from front end dom, add a method to it. 
 // creating methods examples:
-
 // when any object is present you can add a function from outside into the object
 	
 	var apple = {
@@ -46,24 +55,24 @@
 
 // // which is same same as this.But when you get a data it will not have function inside it. But we can create a function from outside and can apply this function to manipulate the data.
 
-// var apple = {
-// 	seed: function(){
-// 		console.log("im also the seed")
-// 	}
-// }
+	var apple = {
+		seed: function(){
+			console.log("im also the seed")
+		}
+	}
 
-apple.seed();
+	apple.seed();
 
 
 // using this: this is used to refer to the object, i can then use this to refer to the value inside the object. This is useful when we are pulling the value from the same object into the function
-// var apple = {
-// 	flesh: "juicy",
-// 	seed: function(){
-// 		return this.flesh+ " "+ "im also the seed"
-// 	}
-// }
+	var apple = {
+		flesh: "juicy",
+		seed: function(){
+			return this.flesh+ " "+ "im also the seed"
+		}
+	}
 
-// console.log(apple.seed())
+	console.log(apple.seed())
 
 
 
@@ -83,16 +92,11 @@ apple.seed();
   console.log(seed.apply(mango, ["hi"]))
 
 
-  // creating prototype:
 
+// *********************
+// 3) capture data from dom and create objects. you can also create prototype for objects. "prototype" and "new" are used together
 
-
-var grapes = {}
-console.log(grapes.toString());
-
-
-
-// *****************
+// creating prototype:
 // Creating object using function. Then we apply prototype on this constryctor functio to add a new method within the object. After thatw e can start creating objects pulling from thin air
 
 	function ObjectTemplate (x, y){
@@ -112,7 +116,8 @@ console.log(grapes.toString());
 
 
 // *****************
-// Creating objects with create method. Here we create a simple object. Then we create a new object.
+// 4) creating object using another object and then giving them super powers(this is more like making a photocopy of another object)
+// Creating objects using other object. Here we create a simple object. Then we create a new object.
 
 	var watermelon  = { 
 		flesh: "juicy",
@@ -121,9 +126,14 @@ console.log(grapes.toString());
 		}
 	}
 
+  watermelon.price =  function(){
+  	return "I'am very pricey"
+  }
 
   var wmone = Object.create(watermelon);
   console.log(wmone.seeds("black"))
+  console.log(wmone.price())
+
 
 
 	</script>
