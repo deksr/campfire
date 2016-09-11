@@ -18,6 +18,7 @@
   // 3) capture data from dom and create objects. you can also create prototype for objects. "prototype" and "new" are used together
   // 4) creating object using another object and then giving them super powers(this is more like making a photocopy of another object)
 // 5) examples of how you can add new property to the object and another example to show how you can take a property from an object and use a function to do somethign with it
+// 6) creating a very basic object from scratch. creating our own key and value
 
 
 
@@ -181,6 +182,26 @@
 	}
 
 
+
+// ***********************
+// 6) creating a very basic object from scratch. creating our own key and value
+
+  var map = {};
+  function storePhi(fk, co) {
+       
+       map[fk] = co;
+       
+       // same as writing
+       // map = {
+       // 	fk: co,
+       // }
+
+  }
+
+  storePhi("pizza", 0.069); 
+  storePhi("touched tree", -0.081); 
+  console.log("pizza" in map);
+  console.log(map)
 
 
 	</script>
