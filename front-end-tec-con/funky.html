@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+	here learning function for styling
+	<p class="color-me"></p>
+
+	<script>
+
+	// var captureClass = document.querySelector(".color-me");//capture an element using class
+
+	// function addingColor(captured){
+	// 	console.log(captured.innerHTML="nmcnm")
+		
+	// 	function playAround(e){
+ //      console.log(e)
+	// 	}
+
+	// 	captured.onmousemove= function(e){
+	// 				playAround(e)
+	// 	}
+	// }
+
+ //  addingColor(captureClass)
+
+
+// *********************
+// creating methods examples:
+
+// when any object is present you can add a function from outside into the object
+	
+	var apple = {
+		flesh: "juicy"
+	}
+	// here we are creating a function to apply inside the object
+	apple.seed = function(){
+		console.log("i am a seed")
+	}
+
+
+// // which is same same as this.But when you get a data it will not have function inside it. But we can create a function from outside and can apply this function to manipulate the data.
+
+// var apple = {
+// 	seed: function(){
+// 		console.log("im also the seed")
+// 	}
+// }
+
+apple.seed();
+
+
+// using this: this is used to refer to the object, i can then use this to refer to the value inside the object. This is useful when we are pulling the value from the same object into the function
+// var apple = {
+// 	flesh: "juicy",
+// 	seed: function(){
+// 		return this.flesh+ " "+ "im also the seed"
+// 	}
+// }
+
+// console.log(apple.seed())
+
+
+
+
+// this is another way: here we are creating a function. and then we use the inbuilt method apply or call to 
+
+	var mango = {
+		flesh: "sweet and juicy"
+	}
+
+
+  function seed(greeting){
+		return greeting + " " + this.flesh + " " + "im also the seed"  
+	}
+
+
+  console.log(seed.apply(mango, ["hi"]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>
