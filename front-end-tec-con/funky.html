@@ -17,6 +17,7 @@
   // 2) when you recieve the data, add a method to it. 
   // 3) capture data from dom and create objects. you can also create prototype for objects. "prototype" and "new" are used together
   // 4) creating object using another object and then giving them super powers(this is more like making a photocopy of another object)
+// 5) examples of how you can add new property to the object and another example to show how you can take a property from an object and use a function to do somethign with it
 
 
 
@@ -53,6 +54,8 @@
 	}
 
 
+
+
 // // which is same same as this.But when you get a data it will not have function inside it. But we can create a function from outside and can apply this function to manipulate the data.
 
 	var apple = {
@@ -63,12 +66,12 @@
 
 	apple.seed();
 
-
+	
 // using this: this is used to refer to the object, i can then use this to refer to the value inside the object. This is useful when we are pulling the value from the same object into the function
 	var apple = {
 		flesh: "juicy",
 		seed: function(){
-			return this.flesh+ " "+ "im also the seed"
+			return this.flesh+ " " + "im also the seed"
 		}
 	}
 
@@ -85,7 +88,7 @@
 
 
   function seed(greeting){
-		return greeting + " " + this.flesh + " " + "im also the seed"  
+		return greeting + " " + this.flesh + " " + "im also the seed"
 	}
 
 
@@ -109,9 +112,17 @@
 		return this.x * this.y + somevalue
 	}
 
+  ObjectTemplate.prototype.abc = "random stuff"
+
 
 	var twoByThree = new ObjectTemplate(2, 3)
 	console.log(twoByThree.z(2))
+  console.log(twoByThree.abc)
+
+  twoByThree.abc = "specific" //you can change a property of the object and give it a new value
+  console.log(twoByThree.abc) //this will show the new property
+  console.log(ObjectTemplate.prototype.abc)//but it;s prototype is still random stuff
+
 
 
 
@@ -133,6 +144,42 @@
   var wmone = Object.create(watermelon);
   console.log(wmone.seeds("black"))
   console.log(wmone.price())
+
+
+
+// ****************************
+// 5) examples of how you can add new property to the object and another example to show how you can take a property from an object and use a function to do somethign with it
+
+
+// simple example:
+
+		var journal = [
+	{events: ["work", "touched tree", "pizza", "running", "television"], squirrel: false},
+	{events: ["work", "ice cream", "cauliflower", "lasagna", "touched tree", "brushed teeth"], squirrel: false}]
+	
+
+  // a) one way of adding a new property to an object
+	for (var i = 0; i < journal.length; i++) {
+	 journal[i].somepower = "fuck this is cool"
+	 console.log(journal[i])
+	};
+
+
+	//b)  adding a new method. you can write functions and then use the data from the objects to do something with it(note how "this" works). After that you can use apply or call to take effect on the object. this doesnt add any new property to the object
+	
+
+	for (var i = 0; i < journal.length; i++) {
+		journal[i].somepower = "fuck this is cool"
+
+		// console.log(journal[i])
+		console.log(hemanPower.apply(journal[i], ["fire"]))
+		console.log(journal[i])
+	};
+
+		function hemanPower(getpower){
+		return "i'm a he-man with" + getpower + this.somepower
+	}
+
 
 
 
