@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+	notification api
+
+	<script>
+
+	// Notification.requestPermission().then(function(result) {
+	//   // console.log(result);
+	//   // using time out because i got the microtask error. Apparently the alert can't be used within promise. It blocks the javascript from running further so we give a set time out 
+	//   if (result == 'denied'){
+ //      setTimeout(() => {
+ //        console.log(result);
+ //        alert("An error occured");
+ //      }, 0);
+ //      return;	  
+ //    }
+
+	// });
+
+
+
+  // Let's check if the browser supports notifications
+  if (!("Notification" in window)) {
+    alert("This browser does not support system notifications");
+  }
+
+  // // Let's check whether notification permissions have already been granted
+  else if (Notification.permission === "granted") {
+    // If it's okay let's create a notification
+    var notification = new Notification("Hi there!");
+  }
+
+  // // Otherwise, we need to ask the user for permission
+  // else if (Notification.permission !== 'denied') {
+  //   Notification.requestPermission(function (permission) {
+  //     // If the user accepts, let's create a notification
+  //     if (permission === "granted") {
+  //       var notification = new Notification("Hi there!");
+  //     }
+  //   });
+  // }
+
+  // Finally, if the user has denied notifications and you 
+  // want to be respectful there is no need to bother them any more.
+
+
+	</script>
+	
+</body>
+</html>
