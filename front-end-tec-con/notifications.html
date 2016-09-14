@@ -32,21 +32,32 @@
     alert("This browser does not support system notifications");
   }
 
+  // if this exists, then it moves to the enxt step
   // // Let's check whether notification permissions have already been granted
+
   else if (Notification.permission === "granted") {
-    // If it's okay let's create a notification
+    // If it's permission has been granted ,let's create a notification
+    console.log("granted");
     var notification = new Notification("Hi there!");
   }
 
-  // // Otherwise, we need to ask the user for permission
-  // else if (Notification.permission !== 'denied') {
-  //   Notification.requestPermission(function (permission) {
-  //     // If the user accepts, let's create a notification
-  //     if (permission === "granted") {
-  //       var notification = new Notification("Hi there!");
-  //     }
-  //   });
-  // }
+  // // Otherwise, we need to ask the user for for permission by opening a box on the DOM and then asking them for permission
+  else if (Notification.permission !== 'denied') {
+  	console.log("it's not denied")
+    Notification.requestPermission(function (permission) {
+      // If the user accepts, let's create a notification
+      console.log("hello i'm requestiong permisson");
+      setTimeout(() => {
+        console.log("i'm set time out");
+        alert("please check the permission box");
+      }, 0);
+      // if the permission was given on the dom (send an event called granted)
+      if (permission === "granted") {
+      	console.log("check ok");
+        var notification = new Notification("Hi there!");
+      }
+    });
+  }
 
   // Finally, if the user has denied notifications and you 
   // want to be respectful there is no need to bother them any more.
