@@ -7,8 +7,12 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
+		notification api <br> <br>
 
-	notification api
+
+<div class="alert-box"></div>
+
+
 
 	<script>
 
@@ -24,6 +28,26 @@
  //    }
 
 	// });
+
+  function alertbox(){
+ 	  console.log("alert box code goes here");
+    var alertbox = document.querySelector(".alert-box");
+    alertbox.insertAdjacentHTML('beforeend', '<div id="alertbox"><input type="checkbox" id="grant" value="granted"> Yes, I grant permission for notification <br><br><input type="checkbox" id="no-grant" value="notgranted"> No, not interested <input type="submit" id= "settingsave" value="Save Settings"></div>');
+      var setsave = document.getElementById('settingsave')
+      setsave.addEventListener('click', function(event) {
+    	  console.log(event);
+    	  var granted = document.getElementById('grant');
+    	  
+    	  if (granted.checked){
+    	  	console.log("its checked")
+    	  }
+    	  else{
+    	  	console.log("its not checked")
+    	  }
+
+    	  var notgranted = document.getElementById('no-grant');
+    })
+  }
 
 
 
@@ -46,10 +70,12 @@
   	console.log("it's not denied")
     Notification.requestPermission(function (permission) {
       // If the user accepts, let's create a notification
-      console.log("hello i'm requestiong permisson");
+      console.log("hello i'm requesting permisson");
       setTimeout(() => {
         console.log("i'm set time out");
-        alert("please check the permission box");
+        alertbox()
+        // alert("please check the permission box");
+        //here we will have a function running
       }, 0);
       // if the permission was given on the dom (send an event called granted)
       if (permission === "granted") {
