@@ -28,26 +28,30 @@
  //    }
 
 	// });
+  var grantedValue;
 
   function alertbox(){
  	  console.log("alert box code goes here");
     var alertbox = document.querySelector(".alert-box");
     alertbox.insertAdjacentHTML('beforeend', '<div id="alertbox"><input type="checkbox" id="grant" value="granted"> Yes, I grant permission for notification <br><br><input type="checkbox" id="no-grant" value="notgranted"> No, not interested <input type="submit" id= "settingsave" value="Save Settings"></div>');
-      var setsave = document.getElementById('settingsave')
-      setsave.addEventListener('click', function(event) {
-    	  console.log(event);
-    	  var granted = document.getElementById('grant');
-    	  
-    	  if (granted.checked){
-    	  	console.log("its checked")
-    	  }
-    	  else{
-    	  	console.log("its not checked")
-    	  }
-
-    	  var notgranted = document.getElementById('no-grant');
-    })
   }
+      
+
+
+    //   var setsave = document.getElementById('settingsave')
+    //   setsave.addEventListener('click', function(event) {
+    // 	  console.log(event);
+    // 	  var granted = document.getElementById('grant').checked;
+    // 	  if (granted){
+    // 	  	console.log("granted")
+    // 	  	grantedyes = granted.value
+    // 	    return granted
+    // 	  }
+    // 	  else{
+    // 	  	console.log("permission denied")
+    // 	  }
+    // })
+
 
 
 
@@ -71,18 +75,37 @@
     Notification.requestPermission(function (permission) {
       // If the user accepts, let's create a notification
       console.log("hello i'm requesting permisson");
-      setTimeout(() => {
-        console.log("i'm set time out");
         alertbox()
         // alert("please check the permission box");
         //here we will have a function running
-      }, 0);
+
+
+
       // if the permission was given on the dom (send an event called granted)
-      if (permission === "granted") {
-      	console.log("check ok");
-        var notification = new Notification("Hi there!");
-      }
-    });
+      var setsave = document.getElementById('settingsave')
+      setsave.addEventListener('click', function(event) {
+    	  console.log(event);
+
+    	  var granted = document.getElementById('grant')
+    	  var grantedyes = granted.checked;
+    	  var grantedValue = granted.value
+
+    	  console.log(granted)
+    	  if (grantedyes === true){
+    	  	console.log(grantedValue)
+    	    if (permission === grantedValue) {
+      	    console.log("check ok");
+            var notification = new Notification("Hi there!");
+          }
+    	  }
+    	  else{
+    	  	console.log("permission denied")
+    	  }
+      })
+
+
+    
+    }); //Notification.requestPermission
   }
 
   // Finally, if the user has denied notifications and you 
