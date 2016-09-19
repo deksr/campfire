@@ -20,7 +20,9 @@ mail-feature: how to mail.
 
 mail-feature-auth: using this to learn encryption
 
-progressive web: this contains folder with progressive web app experiments	
+progressive web: this contains folder with progressive web app experiments
+
+restful-api-book: learning from the book.	
 
 you-did-a-god-job: have used a css/js library for layout
 
