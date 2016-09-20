@@ -1,0 +1,3 @@
+Technical term for the thing named by a URL is "resource".
+
+Whatever document the server sends, we call that document a "representation" of the resource.
