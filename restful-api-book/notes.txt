@@ -10,3 +10,6 @@ The application state: particular page (or to no page at all) being open in the 
 
 The resource stare: urls are resources. when you make a post, it takes you to a new url with www.test.com/message/1234
 This 1234 is a new url for individual message. Basically any state is called resource state.
+
+
+
