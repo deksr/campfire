@@ -12,4 +12,12 @@ The resource stare: urls are resources. when you make a post, it takes you to a 
 This 1234 is a new url for individual message. Basically any state is called resource state.
 
 
+DOM VS BOM:
+Browser object models returns everythign related to the browser.
+example: Navigation object, location object,
+
+Document. (this is dom object)
+wondows. (browser object)
+
+
 

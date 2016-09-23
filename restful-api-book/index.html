@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<div>
+	<!-- <div>
     <h1>You type it, we post it!</h1>
 
     <p>Exciting! Amazing!</p>
@@ -16,7 +16,75 @@
       <a href="/messages">Get started</a>
       <a href="/about">About this site</a>
     </p> 
-</div>
+</div> -->
+
+Browser Object model: This detects the features in browsers.
+
+
+
+<button onclick="myFunction()">Load new document</button>
+
+<script>
+
+// navigation object
+
+var sBrowser, sUsrAg = navigator.userAgent;
+
+if(sUsrAg.indexOf("Chrome") > -1) {
+    sBrowser = "Google Chrome";
+} else if (sUsrAg.indexOf("Safari") > -1) {
+    sBrowser = "Apple Safari";
+} else if (sUsrAg.indexOf("Opera") > -1) {
+    sBrowser = "Opera";
+} else if (sUsrAg.indexOf("Firefox") > -1) {
+    sBrowser = "Mozilla Firefox";
+} else if (sUsrAg.indexOf("MSIE") > -1) {
+    sBrowser = "Microsoft Internet Explorer";
+}
+
+console.log("You are using: " + sBrowser)
+
+
+
+////////// location object. 
+// assign() method loads a new document.
+
+function myFunction() {
+    location.assign("http://www.google.com");
+}
+
+
+
+// screen object
+
+if (screen.pixelDepth < 8) {
+  // use low-color version of page
+  console.log("hello hello")
+} else { 
+  // use regular, colorful page
+  console.log("noa")
+}
+
+
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+
+    var x = window.outerWidth
+    var y = window.innerWidth
+
+    console.log(x + " " + y)
+
+if (window.screen.width > 1000) {
+  // resolution is below 10 x 7
+  console.log("askjs")
+}
+
+
+
+
+</script>
+
+
 	
 </body>
 </html>
