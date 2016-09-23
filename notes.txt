@@ -22,7 +22,7 @@ mail-feature-auth: using this to learn encryption
 
 progressive web: this contains folder with progressive web app experiments
 
-restful-api-book: learning from the book. nothing much to learn.	
+restful-api-book: learning from the book. nothing much to learn.This also has stuff learnt from professional javascript book	
 
 you-did-a-god-job: have used a css/js library for layout
 
