@@ -22,7 +22,8 @@ Browser Object model: This detects the features in browsers.
 
 
 
-<button onclick="myFunction()">Load new document</button>
+
+
 
 <script>
 
@@ -78,6 +79,44 @@ if (window.screen.width > 1000) {
   // resolution is below 10 x 7
   console.log("askjs")
 }
+
+
+
+// chapter 2
+var somestring = "01eqweq"
+var somenumber = 06
+console.log(parseInt(somestring))// converts to number
+console.log(somenumber.toString()) //converts to string
+console.log(String(somenumber)) //converts to string
+
+
+
+
+</script>
+
+<script>
+// zoom
+// if (window.screen.width > 1000) {
+// 	console.log("its zoomed")
+// }
+
+if ( window.screen.pixelDepth > 8 ) {
+  	console.log("its zoomed")
+
+} else {
+	console.log("its no zoomed")
+}
+
+
+var screenAvailWidth = window.screen.availWidth;
+
+console.log(screenAvailWidth);
+
+iAvail = window.screen.availHeight
+console.log(iAvail);
+
+
+
 
 
 
