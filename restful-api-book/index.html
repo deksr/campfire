@@ -116,7 +116,40 @@ iAvail = window.screen.availHeight
 console.log(iAvail);
 
 
+// chapter 5
 
+//asigining function to a variable
+function addme(a,b){
+	console.log(a+b)
+}
+
+addme(3,5)
+var magic = addme 
+magic(2,4)
+
+
+// function inside a function
+function funkone(a,b){
+	function funktwo(b){
+		console.log("hello" + "" + b)
+
+	}
+	funktwo(b)
+}
+funkone(6,8)
+
+
+// function as argument
+function thegreat(a, b) {
+  console.log(b(a)); //b is a function and a is the argumnet
+}
+
+function demostrate(value){
+  return 'hello '+ value;
+}
+
+//call funct
+thegreat('world!', demostrate); //=> 'hello world!'
 
 
 
