@@ -55,6 +55,19 @@
 		console.log(someobjects[i])
 	};
 
+	/// 
+
+	function getKey(k){
+   console.log(`a key named ${k}`);
+   return `a key named ${k}`
+	}
+
+	const obj = {
+	  id: 5,
+	  name: 'San Francisco',
+	  [getKey('enabled')]: true,
+	};
+	
 	</script>
 	
 </body>
