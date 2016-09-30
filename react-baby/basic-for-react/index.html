@@ -58,8 +58,8 @@
 	/// 
 
 	function getKey(k){
-   console.log(`a key named ${k}`);
-   return `a key named ${k}`
+    console.log(`a key named ${k}`);
+    return `a key named ${k}`
 	}
 
 	const obj = {
@@ -67,7 +67,17 @@
 	  name: 'San Francisco',
 	  [getKey('enabled')]: true,
 	};
-	
+
+	////
+
+	[1, 2, 3].map((x) => {
+	  const y = x + 1;
+	  return x * y;
+  });
+
+
+
+
 	</script>
 	
 </body>
