@@ -24,7 +24,7 @@ mail-feature-auth: using this to learn encryption
 
 progressive web: this contains folder with progressive web app experiments
 
-react-baby: learning react here
+react-baby: learning react here. three folders as of now.
 
 restful-api-book: learning from the book. nothing much to learn.This also has stuff learnt from professional javascript book. read about different type of apis like browser apis and external apis(platform apis), sorting objects using functions within functions. still reading this book…
 
