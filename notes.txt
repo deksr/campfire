@@ -8,7 +8,7 @@ boots: mostly worked on bootstrap layouts
 
 chart: created a chart using chart.js
 
-clip-mask: created clip masks on images
+css-clip-mask: created clip masks on images
 
 css-stuff: responsive layouts, media queries
 
@@ -19,6 +19,10 @@ front-end-tec-con: (here I’m learning common technologies/concepts used in fro
 html5new: some new tags in html5
 
 mail-feature: how to mail.
+
+mysqllearn:learning mysql and express
+
+notes: notes on what I read
 
 mail-feature-auth: using this to learn encryption
 
