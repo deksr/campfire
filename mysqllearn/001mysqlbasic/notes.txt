@@ -5,6 +5,12 @@ http://dev.mysql.com/downloads/mysql/
 2)you will be given a temporary password. copy and paste this somewhere
 2016-10-09T01:44:33.700738Z 1 [Note] A temporary password is generated for root@localhost: %Imfakepassword=
 
+
+then type 
+SET PASSWORD = PASSWORD(‘newpasswordsweetie’);
+it will return ‘Query OK, 0 rows affected, 1 warning (0.01 sec)’
+
+
 3)open system preference, then start the server.
 
 4) in your terminal type
@@ -15,5 +21,8 @@ It will then take you to mysql
 
 
 5) To quit the mysql type: \q
+
+6) to see database just type 
+show databases;
 
 
