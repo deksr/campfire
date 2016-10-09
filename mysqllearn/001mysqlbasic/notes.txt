@@ -26,3 +26,21 @@ It will then take you to mysql
 show databases;
 
 
+to create a database, connect to the mysql.
+
+`CREATE DATABASE 001sqldb`
+
+`show databases;`	
+
+`use 001sqldb //this connects to the database`
+
+`CREATE TABLE employees(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name CHAR(25), age INT(2));`
+
+`INSERT INTO employees(id, name, age) VALUES (NULL, 'John', '25');`
+
+`select * from employees;`
+
+To insert multiple records at once:
+ `INSERT INTO employees(id, name, age) VALUES (NULL, 'John', '25'), (NULL, 'Liam', '30'), (NULL, 'Shawn', '23');`
+
+

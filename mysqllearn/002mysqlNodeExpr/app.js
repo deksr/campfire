@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 // -----database goes here----- fakepassword
-
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
@@ -26,7 +25,6 @@ connection.connect(function(err) {
 });
  
 connection.end();
-
 ////
 
 
