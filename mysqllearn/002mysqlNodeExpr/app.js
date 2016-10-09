@@ -5,6 +5,31 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// -----database goes here----- fakepassword
+
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : 'fakepassword',
+  database : '002sqldb'
+});
+ 
+ 
+connection.connect(function(err) {
+  if (err) {
+    console.error('error connecting: ' + err.stack);
+    return;
+  }
+ 
+  console.log('connected as id ' + connection.threadId);
+});
+ 
+connection.end();
+
+////
+
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
