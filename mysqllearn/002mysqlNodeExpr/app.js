@@ -16,15 +16,51 @@ var connection = mysql.createConnection({
  
  
 connection.connect(function(err) {
+
   if (err) {
     console.error('error connecting: ' + err.stack);
     return;
   }
- 
+
   console.log('connected as id ' + connection.threadId);
+
+
+  connection.query('CREATE TABLE people(id INT PRIMARY KEY AUTO_INCREMENT, name varchar(255), age int(2), address text)', function(err, result) {
+    
+    if (err) {
+      console.error('error connecting:' + err.stack);
+      return;
+    } 
+
+
+    connection.query('INSERT INTO people (id, name, age, address) VALUES (?, ?, ?, ?)', [null, 'Larry', '41', 'California, USA'], function(err, result) {
+        
+        if (err) {
+          console.error('error connecting: ' + err.stack);
+          return;
+        }
+
+      connection.query('SELECT * FROM people', function(err, results) {
+         if (err) {
+          console.error('error connecting: ' + err.stack);
+          return;
+        }
+        console.log(results[0].id)
+        console.log(results[0].name)
+        console.log(results[0].age)
+        console.log(results[0].address)
+
+      })
+      
+      connection.end();
+
+
+    })
+
+  })
+
 });
  
-connection.end();
 ////
 
 
