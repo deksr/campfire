@@ -1,2 +1,10 @@
 Install the database.
 
+add db.js in root folder. This works as the file that connects to the database. Then we export this file to the individual models and work on it. Just like how we did in mongo db.
+
+start the server with 'node app.js' instead 'npm start'. 
+
+routes- controller
+models- models
+views- views
+

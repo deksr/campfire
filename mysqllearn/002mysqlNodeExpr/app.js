@@ -5,12 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// var db = require('./db')
+
+
 // -----database goes here----- fakepassword
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : 'fakepassword',
+  password : 'devs123',
   database : '002sqldb'
 });
  
@@ -24,44 +27,9 @@ connection.connect(function(err) {
 
   console.log('connected as id ' + connection.threadId);
 
-
-  connection.query('CREATE TABLE people(id INT PRIMARY KEY AUTO_INCREMENT, name varchar(255), age int(2), address text)', function(err, result) {
-    
-    if (err) {
-      console.error('error connecting:' + err.stack);
-      return;
-    } 
-
-
-    connection.query('INSERT INTO people (id, name, age, address) VALUES (?, ?, ?, ?)', [null, 'Larry', '41', 'California, USA'], function(err, result) {
-        
-        if (err) {
-          console.error('error connecting: ' + err.stack);
-          return;
-        }
-
-      connection.query('SELECT * FROM people', function(err, results) {
-         if (err) {
-          console.error('error connecting: ' + err.stack);
-          return;
-        }
-        console.log(results[0].id)
-        console.log(results[0].name)
-        console.log(results[0].age)
-        console.log(results[0].address)
-
-      })
-      
-      connection.end();
-
-
-    })
-
-  })
-
 });
- 
-////
+
+//// database ends here
 
 
 var routes = require('./routes/index');
@@ -87,6 +55,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+// connect to mysql
+
+// db.connect(db.MODE_PRODUCTION, function(err) {
+//   if (err) {
+//     console.log('Unable to connect to MySQL.')
+//     process.exit(1)
+//   } else {
+//     app.listen(3000, function() {
+//       console.log('Listening on port 3000...')
+//     })
+//   }
+// })
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
