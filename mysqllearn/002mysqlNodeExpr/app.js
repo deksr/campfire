@@ -26,7 +26,6 @@ connection.connect(function(err) {
   }
 
   console.log('connected as id ' + connection.threadId);
-
 });
 
 //// database ends here
@@ -56,18 +55,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
-// connect to mysql
-
-// db.connect(db.MODE_PRODUCTION, function(err) {
-//   if (err) {
-//     console.log('Unable to connect to MySQL.')
-//     process.exit(1)
-//   } else {
-//     app.listen(3000, function() {
-//       console.log('Listening on port 3000...')
-//     })
-//   }
-// })
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
