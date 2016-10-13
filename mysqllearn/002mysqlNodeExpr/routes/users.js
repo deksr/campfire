@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-
-
 var path    = require("path");
 // var Post = require('../models/posts');
 
@@ -19,7 +17,7 @@ router.get('/', function(req, res, next) {
 		connection.query('SELECT * FROM people', function(err, rows){
 			if(err) console.log('Error selecting: %s ', err);
 			console.log(rows)
-
+      res.json(rows);
 			// res.render('customers', {page_title: 'Customers - CMR', data: rows});
 		});
 	});
