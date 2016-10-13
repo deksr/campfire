@@ -8,27 +8,7 @@ var bodyParser = require('body-parser');
 // var db = require('./db')
 
 
-// -----database goes here----- fakepassword
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'devs123',
-  database : '002sqldb'
-});
- 
- 
-connection.connect(function(err) {
 
-  if (err) {
-    console.error('error connecting: ' + err.stack);
-    return;
-  }
-
-  console.log('connected as id ' + connection.threadId);
-});
-
-//// database ends here
 
 
 var routes = require('./routes/index');
@@ -51,6 +31,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+// -----database connection goes here----- fakepassword
+var mysql      = require('mysql');
+var myConnection = require('express-myconnection');
+var dbOptions = {
+  host     : 'localhost',
+  user     : 'root',
+  password : 'devs123',
+  database : '002sqldb'
+};
+ 
+app.use(myConnection(mysql, dbOptions, 'single'));
+
+//// database connection ends here
 
 app.use('/', routes);
 app.use('/users', users);
