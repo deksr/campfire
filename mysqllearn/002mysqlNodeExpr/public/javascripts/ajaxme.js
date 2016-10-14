@@ -16,7 +16,29 @@ $('.submit-class').click(function(event) {
     success: function (msg) {
       console.log(msg);                
     }
- });
+  });
 });
+
+$( document ).ready(function() {
+  console.log( "ready!" );
+
+  $.ajax({
+    type: "GET",
+    dataType: 'JSON', 
+    url: "users/usersjson",
+    success: function (data) {
+      console.log(data);                
+    }
+  });
+  
+    // $('.get-users')
+
+    // for (var i = 0; i < cool.length; i++) {
+    //   console.log(cool[i])
+    //   $("ul").append('<li>' + cool[i] + '</li>');
+    // }
+});
+
+
 
 
