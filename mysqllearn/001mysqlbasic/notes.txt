@@ -44,3 +44,6 @@ To insert multiple records at once:
  `INSERT INTO employees(id, name, age) VALUES (NULL, 'John', '25'), (NULL, 'Liam', '30'), (NULL, 'Shawn', '23');`
 
 
+ To drop a database: `DROP DATABASE 002sqldb;`
+
+
