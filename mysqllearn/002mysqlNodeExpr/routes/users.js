@@ -44,12 +44,20 @@ router.post('/postme', function(req, res, next) {
     age: req.body.age
   };
 
-  connection.query('INSERT INTO users VALUES ?',eachuser, function(err, rows){
-			if(err) console.log('Error selecting: %s ', err);
-			console.log(rows)
-      // res.json(rows);
-			// res.redirect('/');;
-	});
+  req.getConnection(function(err, connection){
+    var query = connection.query("INSERT INTO users SET ?",eachuser,function(err, data){
+      // console.log(query);
+      if (err) {
+        console.error(err);
+        throw err;
+      }
+      res.send(200,'success');
+       // res.json(rows);
+       // res.redirect('/');;
+    });
+  });
+
+
 
 });
 

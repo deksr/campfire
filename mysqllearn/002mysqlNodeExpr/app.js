@@ -45,7 +45,7 @@ var dbOptions = {
  
 app.use(myConnection(mysql, dbOptions, 'single'));
 
-//// database connection ends here
+//// database connection ends here 
 
 app.use('/', routes);
 app.use('/users', users);

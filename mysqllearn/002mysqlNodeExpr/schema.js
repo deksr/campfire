@@ -7,3 +7,9 @@ use 002sqldb;
     name VARCHAR(30),
     age int(2)
   );
+
+
+  INSERT INTO users (id, name, age) VALUES
+  (1, 'Jasmine', 2),
+  (2, 'Jay', 'India');
+
