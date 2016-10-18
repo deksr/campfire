@@ -27,16 +27,16 @@ $( document ).ready(function() {
     dataType: 'JSON', 
     url: "users/usersjson",
     success: function (data) {
-      console.log(data);                
+      console.log(data.length);
+
+      for (var i = 0; i < data.length; i++) {
+        console.log(data[i])
+        $("ul").append('<li>' + data[i].name + '</li>');
+      }             
     }
   });
   
-    // $('.get-users')
 
-    // for (var i = 0; i < cool.length; i++) {
-    //   console.log(cool[i])
-    //   $("ul").append('<li>' + cool[i] + '</li>');
-    // }
 });
 
 
