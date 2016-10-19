@@ -20,7 +20,7 @@ html5new: some new tags in html5
 
 mail-feature: how to mail.
 
-mysqllearn:learning mysql and express. 001mysqlbasic has basic, 002mysqlNodeExpr has crud
+mysqllearn:learning mysql and express. 001mysqlbasic has basic, 002mysqlNodeExpr has crud and retrieving data with ajax
 
 notes: notes on what I read
 
