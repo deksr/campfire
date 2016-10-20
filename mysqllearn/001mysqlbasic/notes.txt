@@ -43,6 +43,9 @@ to create a database, connect to the mysql.
 To insert multiple records at once:
  `INSERT INTO employees(id, name, age) VALUES (NULL, 'John', '25'), (NULL, 'Liam', '30'), (NULL, 'Shawn', '23');`
 
+To select just one record from the database:
+`SELECT id, name, age FROM employees WHERE id='3';`
+
 
 this shoes all the tables `show tables;`
 
