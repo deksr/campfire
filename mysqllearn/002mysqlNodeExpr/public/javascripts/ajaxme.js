@@ -31,11 +31,11 @@ $( document ).ready(function() {
 
       for (var i = 0; i < data.length; i++) {
         console.log(data[i])
-        $("ul").append('<li>' + data[i].name + '</li>');
+        $("ul").append('<li>' + '<a href="'+ data[i].id +'">'+  data[i].name + '</a>'+ '</li>');
       }             
     }
   });
-  
+
 });
 
 

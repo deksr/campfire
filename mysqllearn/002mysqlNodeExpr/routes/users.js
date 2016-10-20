@@ -6,7 +6,7 @@ var path    = require("path");
 
 
 
-/* GET users listing. */
+/* GET- users page with form and all. */
 router.get('/', function(req, res, next) {
   // res.send('respond with a resource');
 
@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 
 
 
-
+/* Index - this json resides on the server. */
 router.get('/usersjson', function(req, res, next) {
   // res.send('respond with a resource');
 
@@ -35,6 +35,20 @@ router.get('/usersjson', function(req, res, next) {
 });
 
 
+
+/* SHOW the item */
+router.get('/:id', function(req, res, next) {
+
+})
+
+
+
+
+
+
+
+
+/* Create and insert objects to db. */
 router.post('/postme', function(req, res, next) {
   // res.send('respond with a resource');
   console.log(req.body)
@@ -56,15 +70,12 @@ router.post('/postme', function(req, res, next) {
        // res.redirect('/');;
     });
   });
-
-
-
 });
 
 
-// router.delete('/:id', function(req, res, next) {
+router.delete('/:id', function(req, res, next) {
 
 
-// })
+})
 
 module.exports = router;
