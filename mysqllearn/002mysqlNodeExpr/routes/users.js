@@ -50,6 +50,7 @@ router.get('/:id', function(req, res, next) {
       if(err) console.log('Error selecting: %s ', err);
       console.log(rows)
       res.json(rows);
+      // res.render('index', { title: 'Express', data: rows });
     });
   })
 })

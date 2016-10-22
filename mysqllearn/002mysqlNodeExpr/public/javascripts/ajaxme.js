@@ -8,6 +8,8 @@ console.log("ajax loaded");
 
 $( document ).ready(function() {
   console.log( "ready!" );
+  console.log(window.location.pathname.split('/'))
+
 
 
   $('.submit-class').click(function(event) {
@@ -44,6 +46,8 @@ $( document ).ready(function() {
     }
   });
 
+
+  // this should a href to some page path. it should have a class. When we click, even runs and ajax happens in turn calls the number and access the product and displays on the forward the path page
 
 
   $('.the-link').click(function(event) {
