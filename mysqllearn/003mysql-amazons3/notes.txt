@@ -1,0 +1,5 @@
+Amazon s3: 
+Bucket means table.
+object are objects. 
+
+Region: Multiple places where the same data is stored in different region(geographically). In case if something goes wrong, You can always rely and retrieve the data from these databases.
