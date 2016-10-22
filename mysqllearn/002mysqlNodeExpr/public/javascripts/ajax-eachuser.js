@@ -6,7 +6,11 @@ $( document ).ready(function() {
     dataType: 'JSON', 
     url: document.location.pathname+'/display',
     success: function (data) {
-      console.log(data);            
+      console.log(data); for (var i = 0; i < data.length; i++) {
+        console.log(data[i]);
+        $("ul").append('<li>' + data[i].name + '</li>');
+      } 
+
     }
   });
 })
