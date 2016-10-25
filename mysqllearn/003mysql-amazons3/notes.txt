@@ -21,3 +21,10 @@ You can move an object into different buckets. right click and cut and paste
 
 
 documentation: http://docs.aws.amazon.com/AmazonS3/latest/gsg/AmazonS3Basics.html
+
+Access keys:
+Amazon S3 is a REST service. You can send request using REST API. Every interaction is authenticated or anonymous. Authenticated request has signature values(also called as access key ID and secret access key.
+
+If there are many people who want to get an access to resources, then use AWS Identity and Access Management (IAM), they can have their own access keys and they can be granted permission to use different resources.The API returns temporary security credentials (access key ID and secret access key), and a security token valid for certain duration.
+
+http://docs.aws.amazon.com/AmazonS3/latest/dev/MakingRequests.html?shortFooter=true
