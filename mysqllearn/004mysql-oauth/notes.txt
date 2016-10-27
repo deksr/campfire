@@ -1,4 +1,5 @@
-Oath notes: There are two types.
+Oath notes: Oauth is an authorisation framework.
+There are two types.
 
 1) Authentication without the user(just an application making a request). This is also called as two legged auth.
 
