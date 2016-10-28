@@ -4,3 +4,6 @@ There are two types.
 1) Authentication without the user(just an application making a request). This is also called as two legged auth.
 
 And authentication with the user(An individual makes a request). This is also called as three legged auth.
+
+learning auth basics:
+http://coop.apps.knpuniversity.com/api
