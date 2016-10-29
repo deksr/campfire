@@ -7,3 +7,21 @@ And authentication with the user(An individual makes a request). This is also ca
 
 learning auth basics:
 http://coop.apps.knpuniversity.com/api
+
+How o auth works:
+
+Apps server sends a request consisting of client id no, secret no and code(no code no yet) to the gmail server.
+Gmail server doesn’t see see a session established, so sends a login popup.
+
+app server sends the login info to the gmail server.
+Gmail server authenticates and sends back authorisation request popup.
+
+app server sends that authorisation request is granted to the gmail server.
+gmail server sends the authorisation code in redirect url.
+
+app server sends the client id, secret and code to the gmail server. 
+gmail server sends the access token to the app server.
+
+app server sends the access token(code), client id no, secret no to the gmail server.
+gmail server sends the data to the the app server
+ 
