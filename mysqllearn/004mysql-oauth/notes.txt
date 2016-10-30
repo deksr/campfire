@@ -24,4 +24,7 @@ gmail server sends the access token to the app server.
 
 app server sends the access token(code), client id no, secret no to the gmail server.
 gmail server sends the data to the the app server
+
+refresh token vs access token:
+https://www.ibm.com/support/knowledgecenter/SSPREK_9.0.0/com.ibm.isam.doc/config/concept/con_oauth20_workflow.html
  
