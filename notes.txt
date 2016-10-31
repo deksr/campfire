@@ -18,7 +18,7 @@ front-end-tec-con: (here I’m learning common technologies/concepts used in fro
 
 html5new: some new tags in html5
 
-mail-feature: how to mail.
+mail-feature: how to mail. used this for portfolio
 
 mysqllearn:learning mysql and express. 001mysqlbasic has basic, 002mysqlNodeExpr has crud and retrieving data with ajax, learning how to integrate amazon s3 for audio file storage.
 003mysql-amazons3 has notes. 004mysql-oauth has ouath notes
