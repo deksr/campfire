@@ -3,3 +3,10 @@ CORS(CROSS ORIGIN RESOURCE SHARING)
 Same origin policy
 webworkers
 persistance data
+
+
+Cookies.html: learning setting cookies
+Cookies-for-potfolio.html: learning placing cookies for my portfolio.
+cookie.js:(this is a cookie placing framework)
+indexdbstore.html:learning indexdb storage here
+localstorage.html: learning local storage here

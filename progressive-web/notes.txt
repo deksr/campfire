@@ -24,12 +24,3 @@ service-worker-basics: here i’m learning the basics of service workers. Althou
 
 your-first-pwapp: this works. Go to work folder and start the google chrome server. 
 
-
-
-
-
-
-
-
-
-
