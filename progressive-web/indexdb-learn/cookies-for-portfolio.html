@@ -5,9 +5,22 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
 	<link rel="stylesheet" href="">
+	<style>
+
+	.hellobaby {
+    background-color: black;
+    color: white;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+	}
+
+	</style>
 </head>
 <body>
 
+
+<div class="cookie-banner"></div>
 
 
 		<script type="text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
@@ -17,8 +30,22 @@
 
 	<script>
 
-docCookies.setItem("test0", "Hello world!");
-docCookies.setItem("test6", "Hello world!", 150);
+$(document).ready(function() { 
+
+    var cookievalue = "dejavVu";
+
+		if(docCookies.hasItem("my-cookie-name")){
+			console.log("oh! Deja vu!");
+
+			$(".cookie-banner").append( "<div>Looks like you have visted tis site before. Click here to contact this </div>" ).find('div').addClass( "hellobaby" );
+		}
+		else{
+			console.log("Hello stranger")
+		}
+
+		docCookies.setItem("my-cookie-name", cookievalue , Infinity);
+
+  })
 
 
 	</script>	
