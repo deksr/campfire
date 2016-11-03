@@ -35,6 +35,9 @@ $(document).ready(function() {
     var cookievalue = "dejavVu"; 
     var bannervalue = "dont-show-banner"
 
+
+
+    //placing a cookie
 		if(docCookies.hasItem("my-cookie-name")){
 			console.log("oh! Deja vu!");
 
@@ -46,8 +49,7 @@ $(document).ready(function() {
 		docCookies.setItem("my-cookie-name", cookievalue , Infinity);
 
 
-		///////// To hide the banner
-
+    // this is if the banner is not nedeed then attach a diiferent cookie
 		if(docCookies.hasItem("my-cookie-name")){
 			console.log("oh! banner cookie present");
 			$(".cookie-banner").hide();
