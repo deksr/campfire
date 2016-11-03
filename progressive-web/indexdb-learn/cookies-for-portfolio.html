@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="">
 	<style>
 
-	.hellobaby {
+	.banner-div-class{
     background-color: black;
     color: white;
     height: 30%;
@@ -32,18 +32,33 @@
 
 $(document).ready(function() { 
 
-    var cookievalue = "dejavVu";
+    var cookievalue = "dejavVu"; 
+    var bannervalue = "dont-show-banner"
 
 		if(docCookies.hasItem("my-cookie-name")){
 			console.log("oh! Deja vu!");
 
-			$(".cookie-banner").append( "<div>Looks like you have visted this site before. Click here to contact <br> <input type='checkbox'/> don't show me this banner again </div>" ).find('div').addClass( "hellobaby" )
-			'<input type="radio" />'
+			$(".cookie-banner").append( "<div class='banner-div-class'>Looks like you have visted this site before. Click here to contact <br> <input type='checkbox' class='check-box-class'/> don't show me this banner again </div>" )
 		}
 		else{
 			console.log("Hello stranger")
 		}
 		docCookies.setItem("my-cookie-name", cookievalue , Infinity);
+
+
+		///////// To hide the banner
+
+		if(docCookies.hasItem("my-cookie-name")){
+			console.log("oh! banner cookie present");
+			$(".cookie-banner").hide();
+		}
+
+		$(".check-box-class").change(function() {
+	    if(this.checked) {
+        console.log("got checked")
+          docCookies.setItem("banner-cookie", bannervalue , Infinity);
+      }
+    });
 
   })
 
