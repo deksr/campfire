@@ -10,7 +10,7 @@
 	.hellobaby {
     background-color: black;
     color: white;
-    height: 30px;
+    height: 30%;
     width: 100%;
     text-align: center;
 	}
@@ -37,16 +37,15 @@ $(document).ready(function() {
 		if(docCookies.hasItem("my-cookie-name")){
 			console.log("oh! Deja vu!");
 
-			$(".cookie-banner").append( "<div>Looks like you have visted tis site before. Click here to contact this </div>" ).find('div').addClass( "hellobaby" );
+			$(".cookie-banner").append( "<div>Looks like you have visted this site before. Click here to contact <br> <input type='checkbox'/> don't show me this banner again </div>" ).find('div').addClass( "hellobaby" )
+			'<input type="radio" />'
 		}
 		else{
 			console.log("Hello stranger")
 		}
-
 		docCookies.setItem("my-cookie-name", cookievalue , Infinity);
 
   })
-
 
 	</script>	
 </body>
