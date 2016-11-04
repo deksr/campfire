@@ -12,11 +12,12 @@
 
 	<script>
 
-
 	// seRVE ME with a server please. Don't right click and open with browser. it will give user denied error in web console.
 
 	$(document).ready(function() { 
 
+
+ ///this below code is from: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition
 
 	var options = {
 	  enableHighAccuracy: true,
@@ -34,7 +35,8 @@
 	  console.log('More or less ' + crd.accuracy + ' meters.');
 
 
-    /// ajax for location
+    /// ajax for location: http://www.developerdrive.com/2014/09/how-to-build-a-weather-app-with-html5s-geolocation-api/
+
 		$.ajax({
 	  url: "http://api.wunderground.com/api/"+ 'secretkey' +"/forecast/geolookup/conditions/q/" + crd.latitude + "," + crd.longitude + ".json",
 	  dataType : "json",
@@ -43,6 +45,8 @@
 	    console.log(data.location.city)   
 	  }
 	  });
+
+	  //ajax
 
 	};
 
