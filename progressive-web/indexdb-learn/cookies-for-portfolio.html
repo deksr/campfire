@@ -33,8 +33,11 @@
 
 $(document).ready(function() { 
 
+
     var cookievalue = "dejavVu"; 
     var bannervalue = "dont-show-banner"
+
+    docCookies.removeItem("banner-cookie")//remove the cookie
 
 
 
@@ -48,6 +51,8 @@ $(document).ready(function() {
 			console.log("Hello stranger")
 		}
 		docCookies.setItem("my-cookie-name", cookievalue , Infinity);
+
+
 
 
     // this is if the banner is not nedeed then attach a diiferent cookie
@@ -67,6 +72,6 @@ $(document).ready(function() {
 
 	</script>	
 
-	
+
 </body>
 </html>
