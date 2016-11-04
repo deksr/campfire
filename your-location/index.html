@@ -15,26 +15,45 @@
 
 	// seRVE ME with a server please. Don't right click and open with browser. it will give user denied error in web console.
 
-var options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
+	$(document).ready(function() { 
 
-function success(pos) {
-  var crd = pos.coords;
 
-  console.log('Your current position is:');
-  console.log('Latitude : ' + crd.latitude);
-  console.log('Longitude: ' + crd.longitude);
-  console.log('More or less ' + crd.accuracy + ' meters.');
-};
+	var options = {
+	  enableHighAccuracy: true,
+	  timeout: 5000,
+	  maximumAge: 0
+	};
 
-function error(err) {
-  console.warn('ERROR(' + err.code + '): ' + err.message);
-};
 
-navigator.geolocation.getCurrentPosition(success, error, options);
+	function success(pos) {
+	  var crd = pos.coords;
+
+	  console.log('Your current position is:');
+	  console.log('Latitude : ' + crd.latitude);
+	  console.log('Longitude: ' + crd.longitude);
+	  console.log('More or less ' + crd.accuracy + ' meters.');
+
+
+    /// ajax for location
+		$.ajax({
+	  url: "http://api.wunderground.com/api/"+ 'secretkey' +"/forecast/geolookup/conditions/q/" + crd.latitude + "," + crd.longitude + ".json",
+	  dataType : "json",
+	  success : function(data) {
+	    console.log(data);
+	    console.log(data.location.city)   
+	  }
+	  });
+
+	};
+
+	function error(err) {
+	  console.warn('ERROR(' + err.code + '): ' + err.message);
+	};
+
+	navigator.geolocation.getCurrentPosition(success, error, options);
+
+})
+
 </script>
 
 	
