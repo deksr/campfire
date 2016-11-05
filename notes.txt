@@ -2,21 +2,12 @@ amp-proj: learning accelerated mobile pages
 
 anim-css: an animation-webkit transform that swings an image
 
-animate:using a css library called animate.css to create animation
-
-boots: mostly worked on bootstrap layouts
-
 chart: created a chart using chart.js
-
-css-clip-mask: created clip masks on images
-
-css-stuff: responsive layouts, media queries
 
 encrypt-data-example: figured out how to encrypt and decrypt using crypto-js
 
 front-end-tec-con: (here I’m learning common technologies/concepts used in front-end development(some concepts like closures, callbacks etc) and has front-end api(like sound too)). Also in funky.html, learning how objects can be manipulated. Notifications.html: I’m learning about web notifications. 
 
-html5new: some new tags in html5
 
 mail-feature: how to mail. used this for portfolio
 
@@ -33,7 +24,6 @@ react-baby: learning react here. three folders as of now.
 
 restful-api-book: learning from the book. nothing much to learn.This also has stuff learnt from professional javascript book. read about different type of apis like browser apis and external apis(platform apis), sorting objects using functions within functions. still reading this book…
 
-you-did-a-god-job: have used a css/js library for layout
 
 your-location: This has the weather api which Im using for location service. This location service is being used for my portfolio site.
 

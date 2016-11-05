@@ -1,6 +1,0 @@
-HOw to svg?
-
-Look up for the jpg image online
-then convert from jpg ----> svg
-then open that svg in the sublime editor.
-<path d > data is svg stuff.
