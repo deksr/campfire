@@ -1,0 +1,8 @@
+configure: 
+We need to have a module called request to amke a resquest from the server. This is a server side api request.
+
+`npm install --save request`
+
+
+get the api from:
+https://developer.github.com/v3/
