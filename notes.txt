@@ -1,7 +1,5 @@
 amp-proj: learning accelerated mobile pages
 
-anim-css: an animation-webkit transform that swings an image
-
 chart: created a chart using chart.js
 
 encrypt-data-example: figured out how to encrypt and decrypt using crypto-js
@@ -15,8 +13,6 @@ mysqllearn:learning mysql and express. 001mysqlbasic has basic, 002mysqlNodeExpr
 003mysql-amazons3 has notes. 004mysql-oauth has ouath notes
 
 notes: notes on what I read.
-
-mail-feature-auth: using this to learn encryption.
 
 progressive web: this contains folder with progressive web app experiments
 
