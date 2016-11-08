@@ -1,5 +1,7 @@
 amp-proj: learning accelerated mobile pages
 
+API’s: learning about api’s (Interacting with browser api’s, web api’s
+
 chart: created a chart using chart.js
 
 encrypt-data-example: figured out how to encrypt and decrypt using crypto-js
