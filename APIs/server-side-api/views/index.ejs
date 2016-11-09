@@ -30,31 +30,42 @@
 
 
 <hr>
-    <div class="row col-xs-8 col-xs-offset-2">
-        <% if (userData) { %>
-          <%= userData %>
-        <% } else { %>
-          <h3 class="text-center text-info">
-
-          </h3>
-        <% } %>
-    </div>
-
-
+<!-- this gives object object-->  
+<div class="row col-xs-8 col-xs-offset-2">
     <% if (userData) { %>
-    <div class="panel panel-default">
-      <div class="panel-heading text-center">
-        <img src="<%= userData.avatar_url %>"
-            class="img-circle" width="300">
-      </div>
-      <div class="panel-body">
-        <h3>Repos:</h3>
-        need to list repos here...
-      </div>
-    </div>
-<% } else { %>            
-  Submit a GitHub username!
+      <%= userData %>
+    <% } else { %>
+      <h3 class="text-center text-info">
+      Hi dev, no user data detected
+      </h3>
+    <% } %>
+  </div>
 
- <% } %>
+
+<!-- this gives avatar url-->  
+  <div class="row col-xs-8 col-xs-offset-2">
+    <% if (userData) { %>
+      <img src="<%= userData.avatar_url %>">
+    <% } else { %>            
+      no avatar found
+    <% } %>
+  </div>
+
+
+<!-- this gives -->  
+  <div class="row col-xs-8 col-xs-offset-2">
+    <% if (userData) { %>
+      <% userData.repos.forEach(function(repo) { %>
+        <a href="<%= repo.html_url %>"><%= repo.name %></a>
+      <% }) %> 
+      <% } else { %> 
+      no repo name found
+
+    <% } %>
+  </div>
+
+
+
+
   </body>
 </html>
