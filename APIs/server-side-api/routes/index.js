@@ -18,6 +18,7 @@ const rootURL = 'https://api.github.com/';
 // });
 
 
+// This code makes a request to the api from the server and then parses the json and renders the ejs template
 
 router.post('/', function(req, res) {
 	console.log(req.body.username)
@@ -28,6 +29,7 @@ router.post('/', function(req, res) {
       'Authorization': 'token ' + process.env.GITHUB_TOKEN
     }
   };
+
 	request(options, function(err, response, body) {
 	  var userData = JSON.parse(body);
 	    // update the options url to fetch the user's repos
@@ -39,7 +41,32 @@ router.post('/', function(req, res) {
 	    res.render('index', {title: 'Express', userData: userData});
 	  });
 	});
+
 });
+
+
+
+// This code makes a request to the api from the server and then responds back with json so the freont end can use it through front end framework
+
+// router.post('/pluto', function(req, res) {
+// 	console.log(req.body.username)
+//   var options = {
+//     url: rootURL + 'users/' + req.body.username,
+//     headers: {
+//       'User-Agent': 'deksr',
+//       'Authorization': 'token ' + process.env.GITHUB_TOKEN
+//     }
+//   };
+
+//   var userData;
+
+//   request(options, function(err, response, body) {
+// 	  var userData = JSON.parse(body);
+// 	  console.log(userData)
+// 	  res.json(userData)
+// 	});
+
+// });
 
 
 router.get('/', function(req, res) {
