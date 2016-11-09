@@ -18,7 +18,8 @@ const rootURL = 'https://api.github.com/';
 // });
 
 
-// This code makes a request to the api from the server and then parses the json and renders the ejs template
+// This code makes a request to the api from the server and then parses the json and renders the ejs template. This involves making one request.
+//While making a post request, we are making it to the same route (post (/)) and access the same route using get(/)
 
 router.post('/', function(req, res) {
 	console.log(req.body.username)
@@ -32,14 +33,8 @@ router.post('/', function(req, res) {
 
 	request(options, function(err, response, body) {
 	  var userData = JSON.parse(body);
-	    // update the options url to fetch the user's repos
-	  options.url = userData.repos_url;
-	  request(options, function(err, response, body) {
-	      // add a repos property
-	    userData.repos = JSON.parse(body);
-	    console.log(userData.repos[0]);
+	  // console.log(userData);
 	    res.render('index', {title: 'Express', userData: userData});
-	  });
 	});
 
 });
