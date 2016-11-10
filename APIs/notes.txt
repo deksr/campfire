@@ -1,0 +1,3 @@
+restful api book: This has browser related apis
+
+server-side api: here we are making a request to the the 3rd party api endpoint from server side.
