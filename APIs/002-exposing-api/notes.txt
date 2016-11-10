@@ -1,0 +1,22 @@
+1) `npm install dotenv --save` this if to access the secret key from the .env file
+
+then add:
+require('dotenv').config();
+in app.js (below var bodyParser = require('body-parser');
+)
+
+
+2) `npm install request --save` this is if we are making a request to the third party api
+
+3) `npm install cors --save` this is to enable CORS access to our app's API
+then add below code in app.js:
+var cors = require('cors');
+...
+var app = express();
+
+app.use(cors());
+
+remember that to expose our api to third party, make them respond in json format. Always add a status code along with the json
+
+then check it in postman plugin
+
