@@ -16,6 +16,8 @@ mysqllearn:learning mysql and express. 001mysqlbasic has basic, 002mysqlNodeExpr
 
 notes: notes on what I read.
 
+Oauth: this covers session, google auth, passport all this for oauth
+
 progressive web: this contains folder with progressive web app experiments
 
 react-baby: learning react here. three folders as of now.

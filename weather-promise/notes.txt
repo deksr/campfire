@@ -1,0 +1,6 @@
+1) create a third party module folder in wgich you will write your functions.
+2) require the thirdparty plugins and Export the function
+
+Quite often you will need to make multiple requests to different api endpoints to fetch all of the detail data you need before rendering the template.
+
+this will result in nested callbacks./ or just use promises
