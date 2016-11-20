@@ -20,7 +20,8 @@ Oauth: this covers session, google auth, passport all this for oauth
 
 progressive web: this contains folder with progressive web app experiments
 
-react-baby: learning react here. three folders as of now.
+
+react-webpage-simple: This is for learning react making simple webpage. For reference of basic react see folder react-relearn in wdi
 
 restful-api-book: learning from the book. nothing much to learn.This also has stuff learnt from professional javascript book. read about different type of apis like browser apis and external apis(platform apis), sorting objects using functions within functions. still reading this book…
 
