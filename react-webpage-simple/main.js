@@ -1,2 +1,2 @@
-import './src/eventpage.js';
+import './src/morestuff.js';
 
