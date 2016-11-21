@@ -7,4 +7,5 @@ https://www.kirupa.com/react/simple_todo_app_react.htm
 
 start server with:
 
-webpack-dev-server --progress --colors
+webpack-dev-server --progress --colors 
+open at http://localhost:8080/
