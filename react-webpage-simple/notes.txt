@@ -1,0 +1,10 @@
+references:
+
+https://gist.github.com/oleg-kipling/ac0825ee23955d7ccfab2b327e148618
+
+https://www.kirupa.com/react/simple_todo_app_react.htm
+
+
+start server with:
+
+webpack-dev-server --progress --colors

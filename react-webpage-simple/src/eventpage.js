@@ -114,6 +114,83 @@ import React, { Component } from 'react';
 // http://stackoverflow.com/questions/23427384/get-form-data-in-reactjs
 
 
+// var MainApp = React.createClass({
+
+//   getInitialState: function(){
+//     return {
+//       feedback: []
+//     } 
+//   }, //always set an initial state. this displays empty array 
+
+
+
+//   submitButton:function(event){
+//     event.preventDefault(); //if this iis not used then the page will refresh after the submit
+//     console.log("clicked");
+//     console.log(this.refs.textInput.value);//extract the value
+
+//     var arrayDB = this.state.feedback; //assign the initial state to an array and then push it creating an object
+
+//     arrayDB.push({
+//       feedbackContent:this.refs.textInput.value,
+//       key: Date.now() //every object should have a key in react
+//     })
+
+//     this.setState({
+//     feedback: arrayDB
+//     });//try and set it to the initial state
+
+//     console.log(this.state.feedback)
+//   },
+
+
+
+//   render: function () {
+//     return (
+//       <div>
+//         <div> 
+//           <h1> leave a feedback </h1>
+//           <form >
+//             <input type="text" ref="textInput"/><br/><br/>  
+//             <button onClick={this.submitButton}>ADD</button>
+//           </form>
+//         </div>
+
+//         <div> 
+//           <h1> showing feedbacks: </h1>
+//           // <p> {this.state.feedback}</p> 
+//         </div>
+//       </div>
+//     )
+//   }
+// });
+
+
+// ReactDOM.render(<MainApp/>, document.getElementById("root"));
+
+
+
+// to-do list mapping on each element:
+// *******************************
+// reference:
+// http://stackoverflow.com/questions/23427384/get-form-data-in-reactjs
+
+
+
+var User = React.createClass({
+
+  render: function () {
+    return (
+      <div>
+      {this.props.name}
+      </div>
+    )
+  }
+
+})
+
+
+
 var MainApp = React.createClass({
 
   getInitialState: function(){
@@ -140,7 +217,16 @@ var MainApp = React.createClass({
     feedback: arrayDB
     });//try and set it to the initial state
 
-    console.log(this.state.feedback)
+
+  
+    // console.log(this.state.feedback)
+    // this.state.feedback.map(function(eachfeed) {
+    //   console.log(eachfeed.feedbackContent)
+    // }) //consoel.log and check for objects
+
+
+    this.refs.textInput.value= "" //this clears the input form after submit
+
   },
 
 
@@ -155,12 +241,14 @@ var MainApp = React.createClass({
             <button onClick={this.submitButton}>ADD</button>
           </form>
         </div>
-
-        <div> 
-          <h1> showing feedbacks: </h1>
-          // <p> {this.state.feedback}</p> 
+        <div>
+          <section>
+            {this.state.feedback.map(function(eachfeed){
+              return <User key={eachfeed.key} name= {eachfeed.feedbackContent} /> 
+            })} 
+          </section>
         </div>
-      </div>
+      </div>     
     )
   }
 });
