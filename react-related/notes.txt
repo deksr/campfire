@@ -1,0 +1,13 @@
+for configuration follow this site: 
+https://www.twilio.com/blog/2015/08/setting-up-react-for-es6-with-webpack-and-babel-2.html
+
+note: we need to have main.js file, index.html. look into react-webpage-simple folder and go by the same style.
+
+once done start server with 
+$ webpack-dev-server --progress --colour
+
+
+and open at http://localhost:8080/webpack-dev-server/
+
+
+
