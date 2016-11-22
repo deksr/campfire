@@ -7,3 +7,9 @@ start server with:
 
 webpack-dev-server --progress --colors 
 open at http://localhost:8080/
+
+
+eventpage: this has basic event exampels plus a todo example
+mainpage: another simple static creating basic component
+morestuff: ignore this. experiment and it's all wrong! 
+rough: This has examples of grabbing values from the unput field
