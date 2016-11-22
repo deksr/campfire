@@ -7,7 +7,7 @@ var ComponentOne = React.createClass({
 
   getInitialState: function() {
     return {
-      edit: "hello"
+      edit: "girl"
     } 
   },
 
@@ -17,29 +17,33 @@ var ComponentOne = React.createClass({
   editme: function () {
     alert('Editing comment');
     this.setState({
-      edit: "there"
+      edit: "*****"
     })
-    console.log(this.state.edit)  
   },
 
-  removeme: function () {
-    alert('Removing comment');
-    this.setState({
-      remove: true
-    });
 
+
+  normalview: function(){
+    console.log("Im normal view")
   },
 
-  
+
+
+  editView: function(){
+    console.log("Im edited view")
+  },
+
+
 
   render: function(){
-    return (
-      <div>
-      {this.props.name}
-        <button onClick={this.editme}>Edit</button>
-        <button onClick={this.removeme}>Remove</button>
-      </div>
-    )
+    
+ 
+      
+      if(this.state.edit == "*****"){
+        return this.normalview()
+      }else{
+        return this.editView()
+      }
   } 
     
 })
@@ -52,7 +56,8 @@ var FakeDom = React.createClass({
 
   getInitialState: function() {
     return {
-      uidata: []
+      uidata: [],
+      
     } 
   },
 
@@ -92,17 +97,15 @@ var FakeDom = React.createClass({
   render: function () {
     return (
       <div>
-    
           {this.state.uidata.map(function(eachone) {
             return <ComponentOne key= {eachone.id} name={eachone.name}/>
             console.log(eachone.name)
             console.log(eachone.id)
-
           })}     
-    
       </div>
     );
   }
+
 });
 
 
