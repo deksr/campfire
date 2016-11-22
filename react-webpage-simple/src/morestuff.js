@@ -5,32 +5,49 @@ import React, { Component } from 'react';
   
 var ComponentOne = React.createClass({
 
-    // eventhandler on the page:
-  edit: function () {
+  getInitialState: function() {
+    return {
+      edit: "hello"
+    } 
+  },
+
+
+
+  // eventhandler on the page:
+  editme: function () {
     alert('Editing comment');
+    this.setState({
+      edit: "there"
+    })
+    console.log(this.state.edit)  
   },
 
-  remove: function () {
+  removeme: function () {
     alert('Removing comment');
+    this.setState({
+      remove: true
+    });
+
   },
 
+  
 
-  render: function () {
+  render: function(){
     return (
       <div>
       {this.props.name}
-        <button onClick={this.edit}>Edit</button>
-        <button onClick={this.remove}>Remove</button>
+        <button onClick={this.editme}>Edit</button>
+        <button onClick={this.removeme}>Remove</button>
       </div>
     )
-  }
-
+  } 
+    
 })
 
 
 
 var FakeDom = React.createClass({
-  //this should have state, you cant pass state from one component to another unlike props.
+  //you can't pass state from one component to another unlike props.
 
 
   getInitialState: function() {
@@ -41,19 +58,21 @@ var FakeDom = React.createClass({
 
 
   componentDidMount: function() {
-
     // ajaxed data:
     var data = [{
       name: "Ann",
-      hobby: "music"
+      hobby: "music",
+      id: Math.random(Date.now())
     },
     {
       name: "Jill",
-      hobby: "trecking"
+      hobby: "trecking",
+      id: Math.random(Date.now())
     },
     {
       name: "Karen",
-      hobby: "books"
+      hobby: "books",
+      id: Math.random(Date.now())
     }]
 
 
@@ -64,14 +83,21 @@ var FakeDom = React.createClass({
   },
 
 
+  // you can have different types that you may want to render:
+
+
+
+
   // render on dom
   render: function () {
     return (
       <div>
     
           {this.state.uidata.map(function(eachone) {
-            return <ComponentOne name={eachone.name}/>
+            return <ComponentOne key= {eachone.id} name={eachone.name}/>
             console.log(eachone.name)
+            console.log(eachone.id)
+
           })}     
     
       </div>
