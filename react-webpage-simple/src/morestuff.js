@@ -5,45 +5,13 @@ import React, { Component } from 'react';
   
 var ComponentOne = React.createClass({
 
-  getInitialState: function() {
-    return {
-      edit: "girl"
-    } 
-  },
-
-
-
   // eventhandler on the page:
-  editme: function () {
-    alert('Editing comment');
-    this.setState({
-      edit: "*****"
-    })
-  },
-
-
-
-  normalview: function(){
-    console.log("Im normal view")
-  },
-
-
-
-  editView: function(){
-    console.log("Im edited view")
-  },
+  
 
 
 
   render: function(){
     
- 
-      
-      if(this.state.edit == "*****"){
-        return this.normalview()
-      }else{
-        return this.editView()
-      }
   } 
     
 })
@@ -57,7 +25,7 @@ var FakeDom = React.createClass({
   getInitialState: function() {
     return {
       uidata: [],
-      
+      edit: "girl"
     } 
   },
 
@@ -88,6 +56,35 @@ var FakeDom = React.createClass({
   },
 
 
+    editme: function () {
+      alert('Editing comment');
+      this.setState({
+        edit: "*****"
+      })
+    },
+
+
+
+  normalview: function(){
+    console.log("Im a normal view")
+  },
+
+
+
+  editView: function(){
+    console.log("Im edited view")
+    return(
+      
+      <div> 
+        {this.state.uidata.map(function(eachone) {
+          return <ComponentOne key= {eachone.id} name={eachone.name}/>
+          console.log(eachone.name)
+          console.log(eachone.id)
+        })} 
+      </div>
+    )
+  },
+
   // you can have different types that you may want to render:
 
 
@@ -95,15 +92,13 @@ var FakeDom = React.createClass({
 
   // render on dom
   render: function () {
-    return (
-      <div>
-          {this.state.uidata.map(function(eachone) {
-            return <ComponentOne key= {eachone.id} name={eachone.name}/>
-            console.log(eachone.name)
-            console.log(eachone.id)
-          })}     
-      </div>
-    );
+    if(this.state.edit == "*****"){
+      return this.normalview()
+    }else{
+          return this.editView()
+          }    
+   
+ 
   }
 
 });
