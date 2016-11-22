@@ -21,7 +21,11 @@ Oauth: this covers session, google auth, passport all this for oauth
 progressive web: this contains folder with progressive web app experiments
 
 
-react-webpage-simple: Have created to-do list. It has samples of events and how to extract value from input field.
+react-related:this folder has react related work. Some basic react is in the folder react-relearn(in wadi folder) and vimmvc (in wadi folder) 
+a)react-webpage-simple: Have created to-do list. It has samples of events and how to extract value from input field.
+b)here I’m learning from a book
+
+
 
 restful-api-book: learning from the book. nothing much to learn.This also has stuff learnt from professional javascript book. read about different type of apis like browser apis and external apis(platform apis), sorting objects using functions within functions. still reading this book…
 
