@@ -1,2 +1,2 @@
-import './src/morestuff.js';
+import './src/001-from-book.js';
 

@@ -2057,3 +2057,15 @@ passport.use(new GoogleStrategy({
 - [Materialize CSS](http://materializecss.com/)
 0
 
+
+How to consume twitter streaming API
+**********************************
+
+1. go to this link: https://apps.twitter.com
+2. click on `create new app`
+3. in place of the website: 'https://google.com' if you don't have your own  callback url blank for now. and then click agree and `create your application`
+4. one o your application page, switch on to keys and access token tab.
+5. In the application setting you will see `consumer key` and `secret` and `owner id `. Take these down. 
+6. then click create my `access token`. This creates two pieces of information : `access token` and `access token secret`. Take down these two as well.
+
+
