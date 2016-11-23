@@ -1,0 +1,8 @@
+1) create a basic webpack, react. react dom configuration setup.
+2) created a twitter api account and got the api keys
+3) cloned and installed snapkite and change the package.json
+4) install all the related the filters pertaining to the the snapkite that helps in the type of filter we want. And configure it in the main snapkite-engines's package.json
+
+run time code and build time code
+
+
