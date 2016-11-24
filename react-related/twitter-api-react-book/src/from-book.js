@@ -10,8 +10,7 @@ var App = React.createClass({
 
 	getInitialState: function () {
     return {
-      isHeaderHidden: true,
-      title: 'Stateful React Component'
+      isHeaderHidden: true
     }; 
   },
 
@@ -24,11 +23,14 @@ var App = React.createClass({
   },
 
   render: function () {
+
+  	var title = "Stateful React Component"
     console.log("console from render" + " "  + this.state.isHeaderHidden)
 
   	if (this.state.isHeaderHidden){
       return (
       	<div> 
+      	 <h3> {title} </h3>
           <button onClick= {this.handleClick}> press me </button>
         </div>  	
       )
