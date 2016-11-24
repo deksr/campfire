@@ -1,6 +1,37 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 
+
+
+var GifItem = function(image){
+	return (
+    <li>
+      <img src={image.gif.url} />
+    </li>
+  )
+}
+
+
+
+
+
+var GifList = function(props){
+
+
+	console.log(props.gifs)
+	var gifItems= props.gifs.map(function(image){
+		console.log(image)
+		return
+		<GifItem key={image.id} gif={image} />
+  })
+
+}
+
+
+
+
+
+
 var Searchbar = React.createClass({
 
 	getInitialState: function () {
@@ -10,16 +41,8 @@ var Searchbar = React.createClass({
   },
 
 
-  // onInputChange: function(term){
-  // 	this.setState({
-  //   	terms: term
-  //   });
 
-  //   var boo = this.props.onTermChange(term);
-  //   console.log("im from state" + this.state.terms)
-  // },
-
-
+  // this is an event:
   onInputChange: function(e){
   	this.setState({
     	terms: e.target.value
@@ -27,6 +50,8 @@ var Searchbar = React.createClass({
 
     var boo = this.props.onTermChange(e.target.value);
     console.log("im from state" + this.state.terms)
+
+
   },
 
 
@@ -46,6 +71,29 @@ var Searchbar = React.createClass({
 
 var App = React.createClass({
 
+	getInitialState: function () {
+    return {
+     
+      gifs: [
+        {
+          id: 1,
+          url: 'http://fakeimg.pl/300/'
+        },
+        {
+          id: 2,
+          url: 'http://fakeimg.pl/300/'
+        },
+        {
+          id: 3,
+          url: 'http://fakeimg.pl/300/'
+        }
+      ]
+    }
+  },
+
+
+
+
 	handleTermChange: function(bla){
 		console.log("handle" + bla)
 	},
@@ -56,6 +104,8 @@ var App = React.createClass({
 		  <div>
         <h1>Giphy Search!</h1>
         <Searchbar onTermChange = {this.handleTermChange} />
+      {/* we are storing a function handleTermChange inside a props so that it can be used in another component.  */}
+       <GifList gifs={this.state.gifs} />
       </div>
 		)
 	}
