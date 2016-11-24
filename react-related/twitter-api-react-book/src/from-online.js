@@ -5,9 +5,12 @@ import React, { Component } from 'react';
 
 var GifItem = function(image){
 	return (
+		<div>
     <li>
       <img src={image.gif.url} />
     </li>
+
+    </div>
   )
 }
 
@@ -24,6 +27,11 @@ var GifList = function(props){
 		return
 		<GifItem key={image.id} gif={image} />
   })
+  return(
+		<div> 
+			{gifItems}
+		</div>
+	)
 
 }
 
