@@ -6,3 +6,17 @@
 run time code and build time code
 
 
+src/files:
+from-book.js has basics from book
+main-stuff is incomplete
+from-online is from an online tutorial
+
+
+notes about react:
+*state is an event chane from client side or server side.
+
+*you can set state in events or simple functions 
+*you can pass functions from one component to another in the form of a props
+
+
+

@@ -17,6 +17,8 @@ var StreamTweet = React.createClass({
     }; 
   },
 
+
+
   componentWillMount: function () {
     console.log('[Snapterest] StreamTweet: 2. Running componentWillMount()');
     this.setState({
@@ -41,6 +43,8 @@ var StreamTweet = React.createClass({
       </section>
     ); 
   }
+
+  
 })
 
 
