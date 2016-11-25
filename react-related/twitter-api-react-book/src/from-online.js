@@ -3,38 +3,45 @@ import React, { Component } from 'react';
 
 
 
-var GifItem = function(image){
-	return (
-		<div>
-    <li>
-      <img src={image.gif.url} />
-    </li>
+// var GifItem = function(image){
+// 	console.log(image.gif.url)
+// 	return (
+// 		<div>
+//     <li>
+//       <img src={image.gif.url} />
+//     </li>
 
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
+
+var GifItem = React.createClass({
+
+  render: function () {
+    return (
+      <div> hello +  
+      {this.props.gif.url}
+      </div>
+    )
+  }
+
+})
 
 
+var GifList = React.createClass({
 
+  render: function () {
+    return (
+  		<ul> 
+	  		{this.props.gifs.map((image)=>{
+	  			console.log(image)
+	  			return <GifItem key={image.id} gif={image} />
+	  		})} 
+  		</ul>
+  	)
+  }
 
-
-var GifList = function(props){
-
-
-	console.log(props.gifs)
-	var gifItems= props.gifs.map(function(image){
-		console.log(image)
-		return
-		<GifItem key={image.id} gif={image} />
-  })
-  return(
-		<div> 
-			{gifItems}
-		</div>
-	)
-
-}
-
+})
 
 
 
