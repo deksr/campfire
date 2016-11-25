@@ -18,7 +18,40 @@ notes about react:
 *you can set state in events or simple functions 
 *you can pass functions from one component to another in the form of a props
 
-* we are storing a function handleTermChange inside a props so that it can be passed on to another component as a prop.  *
+* we are storing a function handleTermChange inside a props so that it can be passed on to another component as a prop.  
+
+if we need to pass one function from component to another then we need to store that in a component element like this --->
+<SearchBar sefuk={this.anotherFunkyFunction} />
+where sefuk is the prop name. anotherFunkyFunction is the function written within the same component. 
+
+var App = React.createClass({
+	anotherFunkyFunction: function(){
+		
+	}
+
+	render:function(){
+		<SearchBar sefuk={this.anotherFunkyFunction} />
+	}
+})
+
+if we have to pass a function from one component to another then it can be passed from parent to immediate child
+
+var Child = React.createClass({
+  hellofunction: function(){
+  consoel.log(this.props.somefunk)
+
+  }
+});
+
+var Parent = React.createClass({
+  somefunction: function(event) {
+    // event.component.props ?why is this not available?
+  },
+  render: function() {
+    <Child somefunk={this.somefunction} />
+  }
+});
+
 
 
 
