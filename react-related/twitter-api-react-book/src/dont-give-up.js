@@ -7,8 +7,7 @@ var AllStuff = React.createClass({
 
 	Allstufffunction: function(){
 		console.log("hi there")
-		this.props.sefuk("e.target.value")
-
+		this.props.sefuk("cool")
 	},
 
 
@@ -23,12 +22,12 @@ var AllStuff = React.createClass({
 })
 
 
-
 // ********************************
 var SearchBar = React.createClass({
 
 	searchFunction: function(e){
 		console.log(e.target.value);
+		this.props.sefuk(e.target.value)
 
 	  console.log("hi i am in searchbar component but i can be stored in a prop like this-->{this.searchFunction} and then called in another component")
   },
@@ -58,12 +57,9 @@ var App = React.createClass({
     	<div> 
 
     		<h4> list of albums </h4>
-	      <AllStuff/> 
+	      <AllStuff sefuk={this.anotherFunkyFunction}/> 
 
 	    	<SearchBar sefuk={this.anotherFunkyFunction} />
-
-	     
-
     	</div>
     )  
   }

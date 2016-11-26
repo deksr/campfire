@@ -13,14 +13,15 @@ from-online is from an online tutorial
 
 
 notes about react:
-*state is an event chane from client side or server side.
+*state is an event change from client side or server side.
 
-*you can set state in events or simple functions 
+*you can set state in events or simple functions
+*states can be passed from one componet to another in props 
 *you can pass functions from one component to another in the form of a props
 
 * we are storing a function handleTermChange inside a props so that it can be passed on to another component as a prop.  
 
-if we need to pass one function from component to another then we need to store that in a component element like this --->
+*if we need to pass one function from component to another then we need to store that in a component element like this --->
 <SearchBar sefuk={this.anotherFunkyFunction} />
 where sefuk is the prop name. anotherFunkyFunction is the function written within the same component. 
 
@@ -34,7 +35,9 @@ var App = React.createClass({
 	}
 })
 
-if we have to pass a function from one component to another then it can be passed from parent to immediate child
+*if we have to pass a function from one component to another then it can be passed from parent to immediate child.
+
+most global function are written in parent
 
 var Child = React.createClass({
   hellofunction: function(){
@@ -51,6 +54,10 @@ var Parent = React.createClass({
     <Child somefunk={this.somefunction} />
   }
 });
+
+* we can pass function written in one parent component to another in child props like this: 
+<AllStuff sefuk={this.anotherFunkyFunction}/> 
+<SearchBar sefuk={this.anotherFunkyFunction} />
 
 
 
