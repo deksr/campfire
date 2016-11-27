@@ -62,5 +62,20 @@ var Parent = React.createClass({
 *the state can be changed by an event trigger. If you call the state just as it is then it will show the initial state in render. When you trigger an event then it will change the state.
 
 
+var GifItem = function(props){
+
+  checktosee: function(){
+    console.log(this.props.gif.images.downsized.url)
+  }
+
+  return (
+    <div> 
+      <img src={props.gif.images.downsized.url} />
+    </div>
+  )
+}
+
+
+
 
 

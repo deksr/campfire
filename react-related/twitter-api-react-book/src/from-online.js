@@ -2,17 +2,31 @@ import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import request from 'superagent';
 
+{/*Math.random(Date.now())*/}
+
 
 
 var GifItem = React.createClass({
-  render: function () {
+
+  checktosee: function(){
+    console.log(this.props.gif.images.downsized.url)
+  },
+
+  render: function(){
     return (
-      <div> hello +  
-      <img src={this.props.gif.url} />
+      <div>
+        <img src={this.props.gif.images.downsized.url} />
+        <button onClick={this.checktosee}> press me to console </button>
       </div>
     )
   }
+
+
+
 })
+
+
+
 
 
 // **************
@@ -22,13 +36,11 @@ var GifList = React.createClass({
   render: function () {
     return (
   		<ul> 
-  		{console.log("hohoh" + this.props.gifs)}
-	  		{this.props.gifs.map((image)=>{
-	  			console.log(image.images.downsized.url)
-	  			return 
-	  			<GifItem key={image.images.id} gif={image.images.downsized
-} />
-	  		})} 
+      {/*{console.log("hohoh" + this.props.gifs)} */}
+	  	  {this.props.gifs.map((image)=>{
+	  		  return
+	  		  <GifItem key={image.id} gif={image.images} />
+	  	  })} 
   		</ul>
   	)
   }
@@ -64,6 +76,7 @@ var Searchbar = React.createClass({
       </div>
     )
 	}
+
 })
 
 
@@ -82,9 +95,9 @@ var App = React.createClass({
 		console.log("handle" + bla)
 		var url = 'http://api.giphy.com/v1/gifs/search?q=${bla.replace(/\s/g, '+')}&api_key=dc6zaTOxFJmzC';
 		request.get(url, (err, res) => {
+      {/*console.log(res.body.data)*/}
       this.setState({ gifs: res.body.data })
     });
-    console.log("hi" + this.state.gifs)
 	},
 
 
