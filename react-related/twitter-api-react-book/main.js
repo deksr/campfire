@@ -1,1 +1,1 @@
-import './src/from-online.js';
+import './src/fun.js';
