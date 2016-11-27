@@ -14,15 +14,12 @@ var GifItem = React.createClass({
 
   render: function(){
     return (
-      <div>
-        <img src={this.props.gif.images.downsized.url} />
+      <li>
+        <img src={this.props.gif} />
         <button onClick={this.checktosee}> press me to console </button>
-      </div>
+      </li>
     )
   }
-
-
-
 })
 
 
@@ -36,10 +33,11 @@ var GifList = React.createClass({
   render: function () {
     return (
   		<ul> 
-      {/*{console.log("hohoh" + this.props.gifs)} */}
+
+        {/*{console.log("hohoh" + this.props.gifs)} */}
 	  	  {this.props.gifs.map((image)=>{
 	  		  return
-	  		  <GifItem key={image.id} gif={image.images} />
+	  		  <GifItem key={image.id} gif={image.images}/> 
 	  	  })} 
   		</ul>
   	)
@@ -87,7 +85,7 @@ var App = React.createClass({
     return {
       gifs: []
     }
-    this.handleTermChange = this.handleTermChange.bind(this);
+    // this.handleTermChange = this.handleTermChange.bind(this);
   },
 
 

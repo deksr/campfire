@@ -10,6 +10,7 @@ src/files:
 from-book.js has basics from book
 main-stuff is incomplete
 from-online is from an online tutorial
+Dont-gie-up : I’ve learnt how to pass state, props, functions to other components. This is still not wrendering properly. i think the problem maybe in the way I’m mapping it?
 
 
 notes about react:
