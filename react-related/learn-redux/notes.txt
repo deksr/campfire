@@ -1,0 +1,17 @@
+Redux is a state management library that stores the entire state of your application in a single object tree known as a store. 
+
+
+In flux architecture:
+
+(S) Store: states are stored here.
+(A) Action: is like the verb asking what action should take place on the data
+(D) dispatcher: it is liek the gatekepper, takes in each action and updates teh store 
+
+
+In is redux architecture:
+(S) store: states are all stored in stores. it is stored in one state tree
+(A) action: asking the permission to make change to the store(the verb) it asks what to do 
+(R) reducers: the actual change that happens
+
+
+note: You can't change the original store object. but you can only create a brand new store object. 
