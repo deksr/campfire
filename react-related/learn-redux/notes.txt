@@ -1,3 +1,5 @@
+https://blog.tighten.co/react-101-using-redux
+
 Redux is a state management library that stores the entire state of your application in a single object tree known as a store. 
 
 
