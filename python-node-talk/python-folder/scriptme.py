@@ -6,21 +6,34 @@ from eventregistry import *
 import requests
 import time
 
-
-
 app = Flask(__name__)
 
 @app.route("/")
 def index():
   print ("Hello World!")
+
+
   er = EventRegistry("http://eventregistry.org", verboseOutput = True)
-  q = QueryEvents()
-  q.addConcept(er.getConceptUri("Deer"))
-  q.addNewsSource(er.getNewsSourceUri(["bbc", "cnn"]))
-  q.addRequestedResult(RequestEventsInfo(page = 1, count = 1, sortBy = "size", sortByAsc = False)) 
+  EventRegistry.login(er, "myemailid@yahoo.com", "mypassword")
+  q = QueryArticles(lang=["eng"])
+
+  # q = QueryEvents()
+  q.addConcept(er.getConceptUri(["trump", "Al Gore"]))
+  q.addNewsSource(er.getNewsSourceUri(["www.bbc.co.uk", "www.nytimes.com", ]))
+  q.addRequestedResult(RequestArticlesInfo(count = 10)) 
   print er.execQuery(q)
   list = er.execQuery(q)
   return jsonify(results=list)
+
+
+  # er = EventRegistry("http://eventregistry.org", verboseOutput = True)
+  # q = QueryEvents()
+  # q.addConcept(er.getConceptUri("Deer"))
+  # q.addNewsSource(er.getNewsSourceUri(["bbc", "cnn"]))
+  # q.addRequestedResult(RequestEventsInfo(page = 1, count = 1, sortBy = "size", sortByAsc = False)) 
+  # print er.execQuery(q)
+  # list = er.execQuery(q)
+  # return jsonify(results=list)
 
 
 
