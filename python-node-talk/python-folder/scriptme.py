@@ -14,7 +14,7 @@ def index():
 
 
   er = EventRegistry("http://eventregistry.org", verboseOutput = True)
-  EventRegistry.login(er, "myemailid@yahoo.com", "mypassword")
+  EventRegistry.login(er, "blabla@yahoo.com", "pword")
   q = QueryArticles(lang=["eng"])
 
   # q = QueryEvents()
