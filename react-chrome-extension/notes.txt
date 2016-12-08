@@ -1,0 +1,6 @@
+click the icon and when it shows inspect popup. it opens dev console.
+
+don't use `webpack-dev-server --progress --colors` to run the server. This doesn't create a bundle.js 
+
+Instead use `http-server' if server is needed. 
+first start with `webpack ./main.js bundle.js` to create a bundle.js and then whenever you make a change run 'webpack'.  

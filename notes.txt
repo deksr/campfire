@@ -21,12 +21,14 @@ Oauth: this covers session, google auth, passport all this for oauth
 progressive web: this contains folder with progressive web app experiments
 
 python-node-talk:
-learning to make python and node talk to each other
+learning to make python app with flask and request using pythons module to a news api
 
 react-related:this folder has react related work. Some basic react is in the folder react-relearn(in wdi folder) and vimmvc (in wdi folder) 
 a)react-webpage-simple: Have created to-do list. It has samples of events and how to extract value from input field.
 b)twitter-api-react-book: here I’m learning from a book but this is incomplete. Twitter api also has some basic input field extraction
 c) learn redux: here I’m learning redux architecture
+
+react-chrome-extension: 
 
 
 
