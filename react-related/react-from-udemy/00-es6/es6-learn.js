@@ -41,5 +41,4 @@ class FirstEs6 extends React.Component {
 
 
 
-
 ReactDOM.render(<FirstEs6/>, document.getElementById('es6-learning'));
