@@ -10,6 +10,14 @@ $ webpack-dev-server --progress --colour
 and open at http://localhost:8080/webpack-dev-server/
 
 
+learn-redux:learning react and redux. this is still incomplete.
+react-from-udemy:learning from udemy
+react-webpage-simple: this is simple webpage that demonstrates input value
+twitter-api-react-book:this is incomplete
+react-modules- this teaches how to use react modules
+react-app-boilerplate: boilerplate using this : https://github.com/facebookincubator/create-react-app
+react-relearn:has many branches but focus on the one inside src folder. this teaches axis request.
+
 
 
 

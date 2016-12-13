@@ -7,7 +7,7 @@ import VideoList from './video-list.js'
 
 
 
-var API_SECRET= 'sjaksj';
+var API_SECRET= 'AIzaSyDeYoAW1zmMVRn5stk00dqD3dDwtjGOmfw';
 
 
  
