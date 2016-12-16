@@ -13,6 +13,9 @@
 	<script>
 // lesson 1: local storage a.k.a web storage
 
+  // localStorage.clear(); //this clears the localstorage
+
+
 // check if the browser supports:
  if(window.localStorage) {
   console.log("local storage can be used");
@@ -25,7 +28,9 @@
 // remember that lcoal storage only takes string data
 // this sets the value to the keys in local storage
  var names = ["Ray", "Jeanne"]; 
+ var namesInobject = [{name: "jill"}, {name: "mary"}]
  localStorage.setItem("names", JSON.stringify(names));
+ localStorage.setItem("namesObj", JSON.stringify(namesInobject));
 
 
 // gets te value from the local storage
