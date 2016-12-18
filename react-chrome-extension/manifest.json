@@ -4,22 +4,17 @@
   "name": "react-chrome-extension",
   "description": " experiment",
   "version": "1.0",
-
-  "background": {
-    "scripts": ["bundle.js"]
-  },
   "browser_action": {
    "default_icon": "chro-ext-news-logo.png",
    "default_popup": "index.html"
   },
-  "content_scripts": [
-      {
-        "matches": ["*://*/*"],
-        "js": ["bundle.js"]
-      }
-    ],
-
   "permissions": [
-   "activeTab"
-   ]
+   "activeTab", "storage"
+   ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["bundle.js"]
+    }
+  ]
 }
