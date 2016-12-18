@@ -22,6 +22,21 @@ var MainApp = React.createClass({
 			 console.log(result);
 		})
 
+    var id = "0"
+
+    chrome.notifications.create(
+      'id1', {
+        type: "basic",
+        title: "Hello",
+        message: "world",
+        iconUrl:"chro-ext-news-logo.png"
+      },
+      function(){
+        console.log("yes please")
+
+      }
+    )
+
 	},
 	//************
 

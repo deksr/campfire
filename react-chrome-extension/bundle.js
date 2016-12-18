@@ -81,6 +81,7 @@
 	  displayName: 'MainApp',
 
 
+	  // learning how to save data in chrome extension's storage
 	  submitForm: function submitForm(e) {
 	    event.preventDefault();
 	    console.log("clicked");
@@ -97,7 +98,19 @@
 	    chrome.storage.sync.get('oldvalue', function (result) {
 	      console.log(result);
 	    });
+
+	    var id = "0";
+
+	    chrome.notifications.create('id1', {
+	      type: "basic",
+	      title: "Hello",
+	      message: "world",
+	      iconUrl: "chro-ext-news-logo.png"
+	    }, function () {
+	      console.log("yes please");
+	    });
 	  },
+	  //************
 
 	  render: function render() {
 	    return _react2.default.createElement(
@@ -21543,8 +21556,10 @@
 	/******/__webpack_require__.m=modules;/******/// expose the module cache
 	/******/__webpack_require__.c=installedModules;/******/// __webpack_public_path__
 	/******/__webpack_require__.p="";/******/// Load entry module and return exports
-	/******/return __webpack_require__(0);/******/})(/************************************************************************//******/[/* 0 *//***/function(module,exports,__webpack_require__){'use strict';var _hello=__webpack_require__(1);var _hello2=_interopRequireDefault(_hello);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}/***/},/* 1 *//***/function(module,exports,__webpack_require__){'use strict';var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(33);var _reactDom2=_interopRequireDefault(_reactDom);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var MainApp=_react2.default.createClass({displayName:'MainApp',submitForm:function submitForm(e){event.preventDefault();console.log("clicked");console.log(this.refs.pinky.value);var oldWord=[this.refs.pinky.value,"hellothere"];var neWord=[];chrome.storage.sync.set({'oldvalue':oldWord},function(){// Notify that we saved.
-	console.log('Settings saved');});chrome.storage.sync.get('oldvalue',function(result){console.log(result);});},render:function render(){return _react2.default.createElement('div',null,_react2.default.createElement('p',null,'hello there from react '),_react2.default.createElement('input',{type:'text',ref:'pinky'}),_react2.default.createElement('button',{onClick:this.submitForm},' click me! '));}});_reactDom2.default.render(_react2.default.createElement(MainApp,null),document.getElementById('hello'));/***/},/* 2 *//***/function(module,exports,__webpack_require__){'use strict';module.exports=__webpack_require__(3);/***/},/* 3 *//***/function(module,exports,__webpack_require__){/* WEBPACK VAR INJECTION */(function(process){/**
+	/******/return __webpack_require__(0);/******/})(/************************************************************************//******/[/* 0 *//***/function(module,exports,__webpack_require__){'use strict';var _hello=__webpack_require__(1);var _hello2=_interopRequireDefault(_hello);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}/***/},/* 1 *//***/function(module,exports,__webpack_require__){'use strict';var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(33);var _reactDom2=_interopRequireDefault(_reactDom);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var MainApp=_react2.default.createClass({displayName:'MainApp',// learning how to save data in chrome extension's storage
+	submitForm:function submitForm(e){event.preventDefault();console.log("clicked");console.log(this.refs.pinky.value);var oldWord=[this.refs.pinky.value,"hellothere"];var neWord=[];chrome.storage.sync.set({'oldvalue':oldWord},function(){// Notify that we saved.
+	console.log('Settings saved');});chrome.storage.sync.get('oldvalue',function(result){console.log(result);});var id="0";chrome.notifications.create('id1',{type:"basic",title:"Hello",message:"world",iconUrl:"chro-ext-news-logo.png"},function(){console.log("yes please");});},//************
+	render:function render(){return _react2.default.createElement('div',null,_react2.default.createElement('p',null,'hello there from react '),_react2.default.createElement('input',{type:'text',ref:'pinky'}),_react2.default.createElement('button',{onClick:this.submitForm},' click me! '));}});_reactDom2.default.render(_react2.default.createElement(MainApp,null),document.getElementById('hello'));/***/},/* 2 *//***/function(module,exports,__webpack_require__){'use strict';module.exports=__webpack_require__(3);/***/},/* 3 *//***/function(module,exports,__webpack_require__){/* WEBPACK VAR INJECTION */(function(process){/**
 		 * Copyright 2013-present, Facebook, Inc.
 		 * All rights reserved.
 		 *
