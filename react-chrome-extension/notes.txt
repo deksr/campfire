@@ -7,4 +7,20 @@ first start with `webpack ./main.js bundle.js` to create a bundle.js and then wh
 
 https://developer.chrome.com/apps/notifications
 
-https://developer.chrome.com/extensions/storage  
+https://developer.chrome.com/extensions/storage 
+
+
+how to use the proper way:
+delete bundle.js
+then run 
+$ `webpack`
+$ `webpack ./main.js bundle.js`
+go to chrome://extension: 
+and upload the folder.
+click/open the plugin on the right.
+click on the plugin and go to dev tools 
+
+
+
+
+
