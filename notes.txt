@@ -32,7 +32,7 @@ d)react-relearn:  has many branches but focus on the one inside src folder. this
 e) react-from-udemy: taking udemy course
 
 
-react-chrome-extension: learning chrome extension and related apis like how to store data in chrome storage and chrome notifications
+react-chrome-extension: learning chrome extension and related apis like how to store data in chrome storage and chrome notifications, doing an axis request and logic for seeing if object is the same
 
 
 
