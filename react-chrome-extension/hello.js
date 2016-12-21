@@ -12,6 +12,8 @@ var MainApp = React.createClass({
     console.log(this.refs.pinky.value);
 
 
+
+
    // learning how to make request and  save the data in storage
     //************
      
@@ -22,7 +24,7 @@ var MainApp = React.createClass({
 
     var makeRequest = function(){
       var recieveData;
-      var storedata;
+      var storedata = [];
 
        
 
@@ -31,7 +33,9 @@ var MainApp = React.createClass({
         recieveData = response.data.articles
 
         for (var i = 0; i < recieveData.length; i++) {
-          storedata = recieveData[0].title
+          storedata = recieveData[0].title //{newsValue: "some 
+          // storedata.push(recieveData[i].title)
+       
         };
 
 
@@ -47,6 +51,7 @@ var MainApp = React.createClass({
               console.log('new news saved');
             });
           }
+
         })
 
       })
@@ -85,7 +90,7 @@ var MainApp = React.createClass({
 
     //     }
     //   )
-    // //************
+    //   //************
 
 	},
 
