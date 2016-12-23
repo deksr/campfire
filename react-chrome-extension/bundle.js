@@ -90,6 +90,17 @@
 	    console.log("clicked");
 	    console.log(this.refs.pinky.value);
 
+	    // learning how to set chrome cookies
+
+	    chrome.cookies.set({
+	      "url": "http://developer.chrome.com/extensions/cookies.html",
+	      "name": "Sample1cookie",
+	      "value": "Dummy Data ok" }, function (cookie) {
+	      console.log(JSON.stringify(cookie));
+	      console.log(chrome.extension.lastError);
+	      console.log(chrome.runtime.lastError);
+	    });
+
 	    // learning how to make request and  save the data in storage
 	    //************
 
@@ -99,17 +110,15 @@
 
 	    var makeRequest = function makeRequest() {
 	      var recieveData;
-	      var storedata = ["hello there"];
+	      var storedata = [];
 
 	      _axios2.default.get('https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=60941c39a76e4f14902097a5030f4cab').then(function (response) {
 	        console.log(response.data.articles);
 	        recieveData = response.data.articles;
 
 	        for (var i = 0; i < recieveData.length; i++) {
-	          // storedata = recieveData[0].title //{newsValue: "some news"}
-	          storedata.push(recieveData[0].title);
-	          //{newsValue: [], [], []}
-
+	          storedata = recieveData[0].title; //{newsValue: "some 
+	          // storedata.push(recieveData[i].title)
 	        };
 
 	        chrome.storage.sync.get('newsValue', function (result) {
@@ -159,7 +168,7 @@
 
 	    //     }
 	    //   )
-	    // //************
+	    //   //************
 	  },
 
 	  render: function render() {
@@ -23095,10 +23104,11 @@
 	/******/__webpack_require__.m=modules;/******/// expose the module cache
 	/******/__webpack_require__.c=installedModules;/******/// __webpack_public_path__
 	/******/__webpack_require__.p="";/******/// Load entry module and return exports
-	/******/return __webpack_require__(0);/******/})(/************************************************************************//******/[/* 0 *//***/function(module,exports,__webpack_require__){'use strict';var _hello=__webpack_require__(1);var _hello2=_interopRequireDefault(_hello);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}/***/},/* 1 *//***/function(module,exports,__webpack_require__){'use strict';var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(33);var _reactDom2=_interopRequireDefault(_reactDom);var _axios=__webpack_require__(179);var _axios2=_interopRequireDefault(_axios);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var MainApp=_react2.default.createClass({displayName:'MainApp',submitForm:function submitForm(e){event.preventDefault();console.log("clicked");console.log(this.refs.pinky.value);// learning how to make request and  save the data in storage
+	/******/return __webpack_require__(0);/******/})(/************************************************************************//******/[/* 0 *//***/function(module,exports,__webpack_require__){'use strict';var _hello=__webpack_require__(1);var _hello2=_interopRequireDefault(_hello);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}/***/},/* 1 *//***/function(module,exports,__webpack_require__){'use strict';var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(33);var _reactDom2=_interopRequireDefault(_reactDom);var _axios=__webpack_require__(179);var _axios2=_interopRequireDefault(_axios);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var MainApp=_react2.default.createClass({displayName:'MainApp',submitForm:function submitForm(e){event.preventDefault();console.log("clicked");console.log(this.refs.pinky.value);// learning how to set chrome cookies
+	chrome.cookies.set({"url":"http://developer.chrome.com/extensions/cookies.html","name":"Sample1cookie","value":"Dummy Data ok"},function(cookie){console.log(JSON.stringify(cookie));console.log(chrome.extension.lastError);console.log(chrome.runtime.lastError);});// learning how to make request and  save the data in storage
 	//************
-	chrome.storage.sync.set({'newsValue':["dummy data, dummy data"]},function(){console.log('Settings saved');});var makeRequest=function makeRequest(){var recieveData;var storedata=["hello there"];_axios2.default.get('https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=60941c39a76e4f14902097a5030f4cab').then(function(response){console.log(response.data.articles);recieveData=response.data.articles;for(var i=0;i<recieveData.length;i++){// storedata = recieveData[0].title //{newsValue: "some news"}
-	storedata.push(recieveData[0].title);//{newsValue: [], [], []}
+	chrome.storage.sync.set({'newsValue':["dummy data, dummy data"]},function(){console.log('Settings saved');});var makeRequest=function makeRequest(){var recieveData;var storedata=[];_axios2.default.get('https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=60941c39a76e4f14902097a5030f4cab').then(function(response){console.log(response.data.articles);recieveData=response.data.articles;for(var i=0;i<recieveData.length;i++){storedata=recieveData[0].title;//{newsValue: "some 
+	// storedata.push(recieveData[i].title)
 	};chrome.storage.sync.get('newsValue',function(result){console.log(result);if(result.newsValue===storedata){console.log("same old news");}else{console.log("new news");chrome.storage.sync.set({'newsValue':storedata},function(){console.log('new news saved');});}});});};window.setInterval(makeRequest,50000);//   // learning how to save data in chrome extension's storage
 	//   //************
 	// console.log("clicked");
@@ -23123,7 +23133,7 @@
 	//       console.log("yes please")
 	//     }
 	//   )
-	// //************
+	//   //************
 	},render:function render(){return _react2.default.createElement('div',null,_react2.default.createElement('p',null,'hello there from react '),_react2.default.createElement('input',{type:'text',ref:'pinky'}),_react2.default.createElement('button',{onClick:this.submitForm},' click me! '));}});_reactDom2.default.render(_react2.default.createElement(MainApp,null),document.getElementById('hello'));/***/},/* 2 *//***/function(module,exports,__webpack_require__){'use strict';module.exports=__webpack_require__(3);/***/},/* 3 *//***/function(module,exports,__webpack_require__){/* WEBPACK VAR INJECTION */(function(process){/**
 		 * Copyright 2013-present, Facebook, Inc.
 		 * All rights reserved.
