@@ -11,7 +11,10 @@ var MainApp = React.createClass({
     console.log("clicked");
     console.log(this.refs.pinky.value);
 
+
+
     // learning how to set chrome cookies
+    //***********************************
 
     chrome.cookies.set({
       "url": "http://developer.chrome.com/extensions/cookies.html",
