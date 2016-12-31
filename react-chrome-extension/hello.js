@@ -29,9 +29,6 @@ var MainApp = React.createClass({
     ////
 
 
-
-
-
    // learning how to make request and  save the data in storage
     //************
      
