@@ -9,9 +9,12 @@
    "default_popup": "index.html"
   },
   "permissions": [
-   "activeTab", "storage", "notifications", "cookies", "<all_urls>"
+   "activeTab", "storage", "notifications", "cookies", "<all_urls>", "background"
 
    ],
+   "background": {
+    "scripts": [ "background.js"]
+  },
   "content_scripts": [
     {
       "matches": ["*://*/*"],

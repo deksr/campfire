@@ -13,66 +13,75 @@ var MainApp = React.createClass({
 
 
 
-    // learning how to set chrome cookies
-    //***********************************
+   //  // learning how to set chrome cookies
+   //  //***********************************
 
-    chrome.cookies.set({
-      "url": "http://developer.chrome.com/extensions/cookies.html",
-      "name": "Sample1cookie",
-      "value": "Dummy Data ok"}, function (cookie){
-      console.log(JSON.stringify(cookie));
-      console.log(chrome.extension.lastError);
-      console.log(chrome.runtime.lastError);
-    })
-
-
-    ////
+   //  chrome.cookies.set({
+   //    "url": "http://developer.chrome.com/extensions/cookies.html",
+   //    "name": "Sample1cookie",
+   //    "value": "Dummy Data ok"}, function (cookie){
+   //    console.log(JSON.stringify(cookie));
+   //    console.log(chrome.extension.lastError);
+   //    console.log(chrome.runtime.lastError);
+   //  })
 
 
-   // learning how to make request and  save the data in storage
-    //************
+   //  ////
+
+
+   // // learning how to make request and  save the data in storage
+   //  //************
      
-    chrome.storage.sync.set({'newsValue': ["dummy data, dummy data"]}, function() {
-      console.log('Settings saved');
-    });
+   //  chrome.storage.sync.set({'newsValue': ["dummy data, dummy data"]}, function() {
+   //    console.log('Settings saved');
+   //  });
 
 
-    var makeRequest = function(){
-      var recieveData;
-      var storedata = [];
+   //  var makeRequest = function(){
+   //    var recieveData;
+   //    var storedata = [];
 
        
 
-      axios.get('https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=60941c39a76e4f14902097a5030f4cab').then(function (response) {
-        console.log(response.data.articles)
-        recieveData = response.data.articles
+   //    axios.get('https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=60941c39a76e4f14902097a5030f4cab').then(function (response) {
+   //      console.log(response.data.articles)
+   //      recieveData = response.data.articles
 
-        for (var i = 0; i < recieveData.length; i++) {
-          storedata = recieveData[0].title //{newsValue: "some 
-          // storedata.push(recieveData[i].title)
+   //      for (var i = 0; i < recieveData.length; i++) {
+   //        storedata = recieveData[0].title //{newsValue: "some 
+   //        // storedata.push(recieveData[i].title)
        
-        };
+   //      };
 
 
-        chrome.storage.sync.get('newsValue', function(result){
-          console.log(result);
+   //      chrome.storage.sync.get('newsValue', function(result){
+   //        console.log(result);
 
-          if(result.newsValue === storedata ){
-            console.log("same old news")
-          }
-          else{
-            console.log("new news");
-            chrome.storage.sync.set({'newsValue': storedata}, function() {
-              console.log('new news saved');
-            });
-          }
+   //        if(result.newsValue === storedata ){
+   //          console.log("same old news")
+   //        }
+   //        else{
+   //          console.log("new news");
+   //          chrome.storage.sync.set({'newsValue': storedata}, function() {
+   //            console.log('new news saved');
+   //          });
+   //        }
 
-        })
+   //      })
 
-      })
+   //    })
+   //  }
+
+   //  window.setInterval(makeRequest, 50000);
+
+    function myCallback(){
+      alert("hi there")
     }
 
-    window.setInterval(makeRequest, 50000)
+    window.setInterval(myCallback, 8000);
+
+    
+
 
    
     //   // learning how to save data in chrome extension's storage
