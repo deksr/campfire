@@ -5,6 +5,17 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
+// import entire SDK 
+var AWS = require('aws-sdk');
+// import AWS object without services 
+var AWS = require('aws-sdk/global');
+// import individual service 
+var S3 = require('aws-sdk/clients/s3');
+
+
+
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
